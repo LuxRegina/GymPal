@@ -12,7 +12,10 @@ namespace GymPal
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("Jost-ExtraBold.ttf","JostExtraBold");
+                    fonts.AddFont("Jost-Bold.ttf", "JostBold");
+                    fonts.AddFont("Jost-SemiBold.ttf", "JostSemiBold");
+                    //fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
