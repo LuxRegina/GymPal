@@ -1,4 +1,6 @@
-﻿namespace GymPal
+﻿
+
+namespace GymPal
 {
     public partial class MainPage : ContentPage
     {
