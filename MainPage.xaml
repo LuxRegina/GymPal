@@ -7,11 +7,11 @@
         <VerticalStackLayout
             Padding="10,0"
             Spacing="100">
-            <Image
-                Source="dumbbell.png"
+            <!--<Image
+                Source=""
                 HeightRequest="185"
                 Aspect="AspectFit"
-                SemanticProperties.Description="testPicture" />
+                SemanticProperties.Description="testPicture" />-->
 
             <Label
                 Text="Hey!"
