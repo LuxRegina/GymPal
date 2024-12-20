@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPal", "GymPal.csproj", "{47FE83F0-4DAF-4B39-A3C9-471E67AFAA7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{499ED8F8-9C65-4424-972D-4F9632777B1B}"
+	ProjectSection(SolutionItems) = preProject
+		BodyWeight.xml = BodyWeight.xml
+		Lifting.xml = Lifting.xml
+		PersonalPlan.xml = PersonalPlan.xml
+		Running.xml = Running.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
