@@ -16,7 +16,8 @@
                     HorizontalOptions="Center"/>
 
                 <ImageButton 
-                    Source="profilpicture.svg"
+                    Source="profil.png"
+                    Background="Transparent"
                     HeightRequest="80"
                     WidthRequest="80"
                     Aspect="AspectFit"
@@ -25,7 +26,7 @@
 
                 <!--Not used on Home screen, but used everywhere else.-->
                 <!--<ImageButton               
-                    Source="homeicon.svg"
+                    Source="homeicon.png"
                     HeightRequest="50"
                     WidthRequest="50"
                     Aspect="AspectFit"
@@ -43,7 +44,8 @@
             <Grid WidthRequest="300" HeightRequest="300" HorizontalOptions="Center">
 
                 <ImageButton 
-                    Source="kondition.svg"
+                    Source="kondition.png"
+                    Background="Transparent"
                     HeightRequest="120"
                     WidthRequest="120"
                     Aspect="AspectFit"
@@ -52,7 +54,8 @@
                     SemanticProperties.Description="testPicture" />
                 
                 <ImageButton 
-                     Source="Images/friavikter.svg"
+                     Source="friavikter.png"
+                     Background="Transparent"
                      HeightRequest="120"
                      WidthRequest="120"
                      Aspect="AspectFit"
@@ -61,7 +64,8 @@
                      SemanticProperties.Description="testPicture" />
                 
                 <ImageButton 
-                     Source="Images/kroppsvikt.svg"
+                     Source="kroppsvikt.png"
+                     Background="Transparent"
                      HeightRequest="120"
                      WidthRequest="120"
                      Aspect="AspectFit"
@@ -70,7 +74,8 @@
                      SemanticProperties.Description="testPicture" />
                 
                 <ImageButton 
-                     Source="Images/custom.svg"
+                     Source="custom.png"
+                     Background="Transparent"
                      HeightRequest="120"
                      WidthRequest="120"
                      Aspect="AspectFit"
