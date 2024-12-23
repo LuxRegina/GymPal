@@ -11,16 +11,34 @@ namespace GymPal
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void LogsBtn_Clicked(object sender, EventArgs e)
         {
-            count++;
+          // TBD Open Logs view   
+        }
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+        private void ProfileBtn_Clicked(object sender, EventArgs e)
+        {
+            // TBD Open manage profile view
+        }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        private void KonditionBtn_Clicked(object sender, EventArgs e)
+        {
+            // TBD Open Kondition view
+        }
+
+        private void FreeweightBtn_Clicked(object sender, EventArgs e)
+        {
+            // TBD Open Free weights view
+        }
+
+        private void BodyweightBtn_Clicked(object sender, EventArgs e)
+        {
+            // TBD Open Bodyweight view
+        }
+
+        private void CustomBtn_Clicked(object sender, EventArgs e)
+        {
+            // TBD Open Custom view
         }
     }
 
