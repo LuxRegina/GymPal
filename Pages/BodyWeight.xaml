@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GymPal.BodyWeight"
+             BackgroundColor="{StaticResource Background}">
+
+    
+    <VerticalStackLayout Padding="10,0" Spacing="20">
+        <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
+            <Image 
+                Source="kroppsvikt.png"                   
+                HeightRequest="90"
+                WidthRequest="90"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                SemanticProperties.Description="Bodyweights icon" />
+                
+            <Label
+                Text="Program"
+                Style="{StaticResource SubHeadline}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"                    
+                SemanticProperties.Description="Program text" />
+
+            <ImageButton  
+                Source="homeicon.png"
+                Background="Transparent"
+                CornerRadius="10"
+                BorderWidth="5"
+                HeightRequest="60"
+                WidthRequest="60"
+                Aspect="AspectFit"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                SemanticProperties.Description="Home button"
+                Clicked="HomeBtn_Clicked" />
+
+            <Line X1="0" Y1="0" X2="500" Y2="0" 
+                    Stroke="{StaticResource SecondaryGreen}"
+                    VerticalOptions="End" />
+
+        </Grid>
+
+        <ScrollView> 
+            <Grid WidthRequest="400" HeightRequest="450" HorizontalOptions="Center">
+                <CollectionView>
+                    <!--TBD Dynamically load in done workouts from class Program-->
+                        
+                </CollectionView>  
+            </Grid>             
+        </ScrollView>
+
+        <Button
+            x:Name="AddBtn"                
+            Text="Add workout" 
+            HorizontalOptions="Center"
+            SemanticProperties.Description="Add bodyweight workout button." />
+            
+    </VerticalStackLayout>    
+</ContentPage>
