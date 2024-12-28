@@ -36,7 +36,7 @@ namespace GymPal
 
         private async void CustomBtn_Clicked(object sender, EventArgs e)
         {
-            // await Navigation.PushAsync(new Custom());
+             await Navigation.PushAsync(new Custom());
         }
     }
 
