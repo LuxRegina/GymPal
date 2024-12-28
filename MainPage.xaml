@@ -51,7 +51,7 @@
                     Aspect="AspectFit"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
-                    SemanticProperties.Description="testPicture" />
+                    SemanticProperties.Description="testPicture" Clicked="RunningButton_Clicked" />
                 
                 <ImageButton 
                      Source="friavikter.png"

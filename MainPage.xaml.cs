@@ -22,6 +22,11 @@ namespace GymPal
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
-    }
+
+		private async void RunningButton_Clicked(object sender, EventArgs e)
+		{
+			await Shell.Current.GoToAsync("//RunningView");
+		}
+	}
 
 }

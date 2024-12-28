@@ -4,10 +4,50 @@
              x:Class="GymPal.RunningView"
              Title="RunningView"
              BackgroundColor="Black">
-    <VerticalStackLayout
-        Grid.Column="13"
-        Grid.Row="13">
-        <Label Grid.Column="7" Grid.Row="2"
-            Text="GymPal" FontSize="Large"/>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="10,0" Spacing="40">
+
+            <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
+
+                <Label
+                Text="Program"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level1" 
+                HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                <ImageButton 
+                Source="kondition.png"
+                Background="Transparent"
+                HeightRequest="80"
+                WidthRequest="80"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                SemanticProperties.Description="testPicture" />
+
+                <ImageButton 
+                Source="homeicon.png"
+                Background="Transparent"
+                HeightRequest="80"
+                WidthRequest="80"
+                Aspect="AspectFit"
+                HorizontalOptions="End"
+                SemanticProperties.Description="testPicture" />
+
+            </Grid>
+
+            <Grid WidthRequest="400" HeightRequest="400" HorizontalOptions="Center">
+            </Grid>
+            <Grid WidthRequest="400" HeightRequest="100" HorizontalOptions="Center">
+                <ImageButton 
+Source="addworkout.png"
+Background="Transparent"
+HeightRequest="80"
+WidthRequest="80"
+Aspect="AspectFit"
+HorizontalOptions="Center"
+SemanticProperties.Description="testPicture" />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
