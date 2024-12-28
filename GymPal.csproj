@@ -71,4 +71,16 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Pages\BodyWeight.xaml.cs">
+	    <DependentUpon>BodyWeight.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\BodyWeight.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

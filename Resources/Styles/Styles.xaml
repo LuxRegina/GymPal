@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Style TargetType="ActivityIndicator">
-        <Setter Property="Color" Value="{StaticResource HeadLineText}" />
+        <Setter Property="Color" Value="{StaticResource SecondaryGreen}" />
     </Style>
 
     <Style TargetType="IndicatorView">
@@ -26,7 +26,7 @@
     <Style TargetType="Button">
         <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
         <Setter Property="BackgroundColor" Value="{StaticResource PrimaryGreen}" />
-        <Setter Property="BorderColor" Value="{StaticResource HeadLineText}" />
+        <Setter Property="BorderColor" Value="{StaticResource SecondaryGreen}" />
         <Setter Property="FontFamily" Value="JostExtraBold"/>
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="BorderWidth" Value="5"/>
@@ -61,7 +61,7 @@
     </Style>
 
     <Style TargetType="CheckBox">
-        <Setter Property="Color" Value="{StaticResource HeadLineText}" />
+        <Setter Property="Color" Value="{StaticResource SecondaryGreen}" />
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -153,7 +153,7 @@
     <Style TargetType="ImageButton">
         <Setter Property="Opacity" Value="1" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderColor" Value="{StaticResource HeadLineText}"/>
+        <Setter Property="BorderColor" Value="{StaticResource SecondaryGreen}"/>
         <Setter Property="BorderWidth" Value="5"/>
         <Setter Property="CornerRadius" Value="0"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
@@ -205,7 +205,7 @@
     </Style>
 
     <Style TargetType="Label" x:Key="Headline">
-        <Setter Property="TextColor" Value="{StaticResource HeadLineText}" />
+        <Setter Property="TextColor" Value="{StaticResource SecondaryGreen}" />
         <Setter Property="FontSize" Value="60" />
         <Setter Property="FontFamily" Value="JostExtraBold"/>
         <Setter Property="HorizontalOptions" Value="Center" />
@@ -213,7 +213,7 @@
     </Style>
 
     <Style TargetType="Label" x:Key="SubHeadline">
-        <Setter Property="TextColor" Value="{StaticResource HeadLineText}" />
+        <Setter Property="TextColor" Value="{StaticResource SecondaryGreen}" />
         <Setter Property="FontSize" Value="30" />
         <Setter Property="FontFamily" Value="JostExtraBold"/>
         <Setter Property="HorizontalOptions" Value="Center" />
@@ -249,7 +249,7 @@
     </Style>
 
     <Style TargetType="ProgressBar">
-        <Setter Property="ProgressColor" Value="{StaticResource HeadLineText}" />
+        <Setter Property="ProgressColor" Value="{StaticResource SecondaryGreen}" />
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
@@ -342,9 +342,9 @@
     </Style>
 
     <Style TargetType="Slider">
-        <Setter Property="MinimumTrackColor" Value="{StaticResource HeadLineText}" />
+        <Setter Property="MinimumTrackColor" Value="{StaticResource SecondaryGreen}" />
         <Setter Property="MaximumTrackColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" />
-        <Setter Property="ThumbColor" Value="{StaticResource HeadLineText}" />
+        <Setter Property="ThumbColor" Value="{StaticResource SecondaryGreen}" />
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
@@ -417,33 +417,33 @@
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Background}" />
     </Style>
 
     <Style TargetType="Shell" ApplyToDerivedTypes="True">
-        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}" />
+        <Setter Property="Shell.BackgroundColor" Value="{StaticResource Background}" />
         <Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource SecondaryDarkText}}" />
         <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource SecondaryDarkText}}" />
         <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" />
         <Setter Property="Shell.NavBarHasShadow" Value="False" />
-        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
-        <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource Magenta}, Dark={StaticResource White}}" />
-        <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource Magenta}, Dark={StaticResource White}}" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Background}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource Background}" />
+        <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource White}" />
         <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
     </Style>
 
     <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}" />
+        <Setter Property="BarBackgroundColor" Value="{StaticResource Background}" />
         <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
         <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
     </Style>
 
     <Style TargetType="TabbedPage">
-        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
+        <Setter Property="BarBackgroundColor" Value="{StaticResource Background}" />
         <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Magenta}, Dark={StaticResource White}}" />
         <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
-    </Style>
+    </Style>    
     
 </ResourceDictionary>
