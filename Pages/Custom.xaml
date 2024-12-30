@@ -8,15 +8,15 @@
         <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
             <Image 
                 Source="custom.png"                   
-                HeightRequest="90"
-                WidthRequest="90"
+                HeightRequest="80"
+                WidthRequest="80"
                 Aspect="AspectFit"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 SemanticProperties.Description="Custom program icon" />
 
             <Label
-                Text="Custom Program"
+                Text="Custom Programs"
                 Style="{StaticResource SubHeadline}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"                    
