@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GymPal.FreeweightView"
+             Title="FreeweightView">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10,0" Spacing="40">
+            <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
+                <Label
+                    Text="Free weights"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1" 
+                    HorizontalOptions="Center"/>
+
+                <ImageButton 
+                    x:Name="profilBtn"
+                    Source="friavikter.png"
+                    CornerRadius="20"
+                    HeightRequest="80"
+                    WidthRequest="80"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Start"
+                    SemanticProperties.Description="Free weights view." 
+                    <!-- Clicked="ProfileBtn_Clicked" /> --> />
+
+                <!--Not used on Home screen, but used everywhere else.-->
+                <!--<ImageButton               
+                    Source="homeicon.png"
+                    Background="Transparent"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    Aspect="AspectFit"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    SemanticProperties.Description="Home button" />-->
+            </Grid>
+
+            <Label
+                Text="Options..:"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Free weights page text" />
+
+            <Grid WidthRequest="300" HeightRequest="300" HorizontalOptions="Center">
+                <ImageButton 
+                    Source="kondition.png"
+                    HeightRequest="120"
+                    CornerRadius="65"
+                    WidthRequest="120"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    SemanticProperties.Description="Kondition workout button" 
+                    Clicked="KonditionBtn_Clicked"/>
+
+                <ImageButton 
+                     Source="friavikter.png"
+                     CornerRadius="65"
+                     HeightRequest="120"
+                     WidthRequest="120"
+                     Aspect="AspectFit"
+                     HorizontalOptions="End"
+                     VerticalOptions="Start"
+                     SemanticProperties.Description="Freeweights workout button" 
+                    Clicked="FreeweightBtn_Clicked"/>
+
+                <ImageButton 
+                     Source="kroppsvikt.png"
+                     CornerRadius="65"
+                     HeightRequest="120"
+                     WidthRequest="120"
+                     Aspect="AspectFit"
+                     HorizontalOptions="Start"
+                     VerticalOptions="End"
+                     SemanticProperties.Description="Bodyweight workout button"
+                    Clicked="BodyweightBtn_Clicked"/>
+
+                <ImageButton 
+                     Source="custom.png"
+                     CornerRadius="65"
+                     HeightRequest="120"
+                     WidthRequest="120"
+                     Aspect="AspectFit"
+                     HorizontalOptions="End"
+                     VerticalOptions="End"
+                     SemanticProperties.Description="Add custom workout button"
+                    Clicked="CustomBtn_Clicked"/>
+
+            </Grid>
+
+            <Button
+                x:Name="LogsBtn"                
+                Text="Logs" 
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="View logs button"
+                Clicked="LogsBtn_Clicked"
+                />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
