@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GymPal.Pages.FreeweightView">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Header -->
+        <Grid Padding="10">
+            <!-- Rund hantelbild -->
+            <Frame WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="#3CBA92"
+                   HorizontalOptions="Start" VerticalOptions="Center">
+                <Image Source="friavikter.png" Aspect="AspectFit" />
+            </Frame>
+
+            <!-- Titel -->
+            <Label Text="Program"
+                   FontSize="35"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="#3CBA92"
+                   FontAttributes="Bold" />
+
+            <!-- Tillbaka-pil -->
+            <ImageButton 
+                Source="homeicon.png"
+                CornerRadius="20"
+                HeightRequest="80"
+                WidthRequest="80"
+                Aspect="AspectFit"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                SemanticProperties.Description="Manage home button." 
+                Clicked="HomeBtn_Clicked" />
+
+
+        </Grid>
+
+        <!-- Skrollbar + Träningsrutor -->
+        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
+            <StackLayout Spacing="20">
+                <!-- Träningsrutor -->
+                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Chest day - Time: 45 min - Intensity: Low" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Back day - Time: 1h - Intensity: High" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Leg day - Time: 1,5h - Intensity: High" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Arm day - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Bottenknappar -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
+            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
+                    HeightRequest="50" WidthRequest="50" CornerRadius="12" 
+                    HorizontalOptions="Center" VerticalOptions="End" />
+
+            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
+                    HeightRequest="50" WidthRequest="50" CornerRadius="12" 
+                    HorizontalOptions="Center" VerticalOptions="End" Grid.Column="1" />
+        </Grid>
+    </Grid>
+
+</ContentPage>
