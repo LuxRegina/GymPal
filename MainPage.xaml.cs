@@ -10,8 +10,8 @@ namespace GymPal
 
         private async void RunningButton_Clicked(object sender, EventArgs e)
         {
-          await Shell.Current.GoToAsync("//RunningView");
-        }	
+			await Navigation.PushAsync(new RunningView());
+		}	
 
         private async void LogsBtn_Clicked(object sender, EventArgs e)
         {

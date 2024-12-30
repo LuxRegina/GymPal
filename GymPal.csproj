@@ -75,7 +75,7 @@
 	  <MauiXaml Update="Pages\AddRunningWorkout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="RunningView.xaml">
+	  <MauiXaml Update="Pages\RunningView.xaml">
 		<Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
