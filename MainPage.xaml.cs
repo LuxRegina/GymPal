@@ -22,11 +22,11 @@ namespace GymPal
         {
             // await Navigation.PushAsync(new Kondition());
         }
-
+        
         // Brings user to Free weight view.
         private async void FreeweightBtn_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new FreeWeight());
+            await Navigation.PushAsync(new FreeweightView());
         }
 
         private async void BodyweightBtn_Clicked(object sender, EventArgs e)
@@ -39,5 +39,4 @@ namespace GymPal
              await Navigation.PushAsync(new Custom());
         }
     }
-
 }
