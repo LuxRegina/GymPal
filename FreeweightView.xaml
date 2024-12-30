@@ -21,8 +21,8 @@
                     WidthRequest="80"
                     Aspect="AspectFit"
                     HorizontalOptions="Start"
-                    SemanticProperties.Description="Free weights view." 
-                    <!-- Clicked="ProfileBtn_Clicked" /> --> />
+                    SemanticProperties.Description="Free weights view." />
+                    
 
                 <!--Not used on Home screen, but used everywhere else.-->
                 <!--<ImageButton               
@@ -52,7 +52,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     SemanticProperties.Description="Kondition workout button" 
-                    Clicked="KonditionBtn_Clicked"/>
+                    />
 
                 <ImageButton 
                      Source="friavikter.png"
@@ -63,7 +63,7 @@
                      HorizontalOptions="End"
                      VerticalOptions="Start"
                      SemanticProperties.Description="Freeweights workout button" 
-                    Clicked="FreeweightBtn_Clicked"/>
+                        />
 
                 <ImageButton 
                      Source="kroppsvikt.png"
@@ -74,7 +74,7 @@
                      HorizontalOptions="Start"
                      VerticalOptions="End"
                      SemanticProperties.Description="Bodyweight workout button"
-                    Clicked="BodyweightBtn_Clicked"/>
+                        />
 
                 <ImageButton 
                      Source="custom.png"
@@ -85,7 +85,7 @@
                      HorizontalOptions="End"
                      VerticalOptions="End"
                      SemanticProperties.Description="Add custom workout button"
-                    Clicked="CustomBtn_Clicked"/>
+                        />
 
             </Grid>
 
@@ -94,7 +94,7 @@
                 Text="Logs" 
                 HorizontalOptions="Center"
                 SemanticProperties.Hint="View logs button"
-                Clicked="LogsBtn_Clicked"
+                
                 />
         </VerticalStackLayout>
     </ScrollView>

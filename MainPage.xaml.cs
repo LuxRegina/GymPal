@@ -26,9 +26,9 @@ namespace GymPal
             // TBD Open Kondition view
         }
 
-        private void FreeweightBtn_Clicked(object sender, EventArgs e)
+        private async void FreeweightBtn_Clicked(object sender, EventArgs e)
         {
-            // TBD Open Free weights view
+            await Navigation.PushAsync(new FreeweightView());
         }
 
         private void BodyweightBtn_Clicked(object sender, EventArgs e)
