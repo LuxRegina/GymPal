@@ -9,11 +9,11 @@ public partial class AddRunningWorkout : ContentPage
 
 	private async void HomeBtn_Clicked(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync("//MainPage");
+		await Navigation.PushAsync(new MainPage());
 	}
 
 	private async void RunningBtn_Clicked(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync("//RunningView");
+		await Navigation.PushAsync(new RunningView());
 	}
 }
