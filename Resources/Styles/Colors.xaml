@@ -9,14 +9,18 @@
 
     <!-- Colors we use below -->
     
-    <Color x:Key="HeadLineText">#A0E5CF</Color> 
     <Color x:Key="PrimaryGreen">#3CBA92</Color>
+    <Color x:Key="SecondaryGreen">#A0E5CF</Color> 
     <Color x:Key="PrimaryText">#000000</Color>
+    <Color x:Key="PressedBtnColor">#806CB9F9</Color>
+    <Color x:Key="Background">#000000</Color>
 
-    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource HeadLineText}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource PrimaryGreen}"/>
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource SecondaryGreen}"/>
     <SolidColorBrush x:Key="BlackTextBrush" Color="{StaticResource PrimaryText}"/>
-    
+    <SolidColorBrush x:Key="BtnPressedBrush" Color="{StaticResource PressedBtnColor}" />
+    <SolidColorBrush x:Key="BackgroundColor" Color="{StaticResource Background}"/>
+
     <!-- Colors we use above -->
 
     <Color x:Key="Secondary">#DFD8F7</Color>
