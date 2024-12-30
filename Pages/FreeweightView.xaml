@@ -94,5 +94,4 @@
                     HorizontalOptions="Center" VerticalOptions="End" Grid.Column="1" />
         </Grid>
     </Grid>
-
 </ContentPage>

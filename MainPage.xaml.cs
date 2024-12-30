@@ -9,6 +9,11 @@ namespace GymPal
             InitializeComponent();
         }
 
+        private async void RunningButton_Clicked(object sender, EventArgs e)
+        {
+			await Navigation.PushAsync(new RunningView());
+		}	
+
         private async void LogsBtn_Clicked(object sender, EventArgs e)
         {
             // await Navigation.PushAsync(new Logs()); 
@@ -17,11 +22,6 @@ namespace GymPal
         private async void ProfileBtn_Clicked(object sender, EventArgs e)
         {
             // await Navigation.PushAsync(new Profile());
-        }
-
-        private async void KonditionBtn_Clicked(object sender, EventArgs e)
-        {
-            // await Navigation.PushAsync(new Kondition());
         }
         
         // Brings user to Free weight view.

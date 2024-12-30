@@ -26,48 +26,49 @@
                 SemanticProperties.Description="Manage profile button." 
                 Clicked="ProfileBtn_Clicked" />                
     
-        </Grid>
+        </Grid>            
 
-        <Label
+          <Label
             Text="Choose workout category:"
             Style="{StaticResource SubHeadline}"
             SemanticProperties.Description="Choose workout category" />
-            
-        <Grid WidthRequest="300" HeightRequest="300" HorizontalOptions="Center">
-            <ImageButton 
-                Source="kondition.png"
-                HeightRequest="120"
-                CornerRadius="65"
-                WidthRequest="120"
-                Aspect="AspectFit"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                SemanticProperties.Description="Kondition workout button" 
-                Clicked="KonditionBtn_Clicked"/>
-                
-            <ImageButton 
-                    Source="friavikter.png"
-                    CornerRadius="65"
-                    HeightRequest="120"
-                    WidthRequest="120"
-                    Aspect="AspectFit"
-                    HorizontalOptions="End"
-                    VerticalOptions="Start"
-                    SemanticProperties.Description="Freeweights workout button" 
-                    Clicked="FreeweightBtn_Clicked"/>
-                
-            <ImageButton 
-                    Source="kroppsvikt.png"
+
+            <Grid WidthRequest="300" HeightRequest="300" HorizontalOptions="Center">
+                 
+                <ImageButton 
+                    Source="kondition.png"
                     CornerRadius="65"
                     HeightRequest="120"
                     WidthRequest="120"
                     Aspect="AspectFit"
                     HorizontalOptions="Start"
-                    VerticalOptions="End"
-                    SemanticProperties.Description="Bodyweight workout button"
-                    Clicked="BodyweightBtn_Clicked"/>
+                    VerticalOptions="Start"
+                    SemanticProperties.Description="Kondition workout button" 
+                    Clicked="RunningButton_Clicked" />
+
+                <ImageButton 
+                     Source="friavikter.png"  
+                     CornerRadius="65"
+                     HeightRequest="120"
+                     WidthRequest="120"
+                     Aspect="AspectFit"
+                     HorizontalOptions="End"
+                     VerticalOptions="Start"
+                     SemanticProperties.Description="Freeweights workout button"
+                    Clicked="FreeweightBtn_Clicked"/>
+
+                <ImageButton 
+                     Source="kroppsvikt.png"  
+                     CornerRadius="65"
+                     HeightRequest="120"
+                     WidthRequest="120"
+                     Aspect="AspectFit"
+                     HorizontalOptions="Start"
+                     VerticalOptions="End"
+                     SemanticProperties.Description="Bodyweight workout button"
+                     Clicked="BodyweightBtn_Clicked"/>                   
                 
-            <ImageButton 
+               <ImageButton 
                     Source="custom.png"
                     CornerRadius="65"
                     HeightRequest="120"
