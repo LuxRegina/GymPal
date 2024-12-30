@@ -72,13 +72,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AddRunningWorkout.xaml">
+	  <MauiXaml Update="Pages\AddRunningWorkout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="RunningView.xaml">
-	  <Compile Update="Pages\BodyWeight.xaml.cs">
-	    <DependentUpon>BodyWeight.xaml</DependentUpon>
-	  </Compile>
+		<Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -86,7 +85,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\BodyWeight.xaml">
-
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
