@@ -2,101 +2,90 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GymPal.MainPage"
-             BackgroundColor="Black">
+             BackgroundColor="{StaticResource Background}">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="10,0" Spacing="40">
-            <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
-                <Label
-                    Text="GymPal"
-                    Style="{StaticResource Headline}"
-                    SemanticProperties.HeadingLevel="Level1" 
-                    HorizontalOptions="Center"/>
+    
+    <VerticalStackLayout Padding="10,0" Spacing="40">
+        <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
+            <Label
+                Text="GymPal"
+                Style="{StaticResource Headline}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                SemanticProperties.Description="App name GymPal" />
 
-                <ImageButton 
-                    x:Name="profilBtn"
-                    Source="profil.png"
-                    CornerRadius="20"
-                    HeightRequest="80"
-                    WidthRequest="80"
-                    Aspect="AspectFit"
-                    HorizontalOptions="Start"
-                    SemanticProperties.Description="Manage profile button." 
-                    Clicked="ProfileBtn_Clicked" />                
+            <ImageButton 
+                x:Name="profilBtn"
+                Source="profil.png"
+                CornerRadius="20"
+                HeightRequest="80"
+                WidthRequest="80"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                SemanticProperties.Description="Manage profile button." 
+                Clicked="ProfileBtn_Clicked" />                
+    
+        </Grid>
 
-                <!--Not used on Home screen, but used everywhere else.-->
-                <!--<ImageButton               
-                    Source="homeicon.png"
-                    Background="Transparent"
-                    HeightRequest="50"
-                    WidthRequest="50"
+        <Label
+            Text="Choose workout category:"
+            Style="{StaticResource SubHeadline}"
+            SemanticProperties.Description="Choose workout category" />
+            
+        <Grid WidthRequest="300" HeightRequest="300" HorizontalOptions="Center">
+            <ImageButton 
+                Source="kondition.png"
+                HeightRequest="120"
+                CornerRadius="65"
+                WidthRequest="120"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                SemanticProperties.Description="Kondition workout button" 
+                Clicked="KonditionBtn_Clicked"/>
+                
+            <ImageButton 
+                    Source="friavikter.png"
+                    CornerRadius="65"
+                    HeightRequest="120"
+                    WidthRequest="120"
                     Aspect="AspectFit"
                     HorizontalOptions="End"
                     VerticalOptions="Start"
-                    SemanticProperties.Description="Home button" />-->
-            </Grid>
-
-            <Label
-                Text="Choose workout category:"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Choose workout category" />
-            
-            <Grid WidthRequest="300" HeightRequest="300" HorizontalOptions="Center">
-                <ImageButton 
-                    Source="kondition.png"
-                    HeightRequest="120"
+                    SemanticProperties.Description="Freeweights workout button" 
+                    Clicked="FreeweightBtn_Clicked"/>
+                
+            <ImageButton 
+                    Source="kroppsvikt.png"
                     CornerRadius="65"
+                    HeightRequest="120"
                     WidthRequest="120"
                     Aspect="AspectFit"
                     HorizontalOptions="Start"
-                    VerticalOptions="Start"
-                    SemanticProperties.Description="Kondition workout button" 
-                    Clicked="KonditionBtn_Clicked"/>
-                
-                <ImageButton 
-                     Source="friavikter.png"
-                     CornerRadius="65"
-                     HeightRequest="120"
-                     WidthRequest="120"
-                     Aspect="AspectFit"
-                     HorizontalOptions="End"
-                     VerticalOptions="Start"
-                     SemanticProperties.Description="Freeweights workout button" 
-                    Clicked="FreeweightBtn_Clicked"/>
-                
-                <ImageButton 
-                     Source="kroppsvikt.png"
-                     CornerRadius="65"
-                     HeightRequest="120"
-                     WidthRequest="120"
-                     Aspect="AspectFit"
-                     HorizontalOptions="Start"
-                     VerticalOptions="End"
-                     SemanticProperties.Description="Bodyweight workout button"
+                    VerticalOptions="End"
+                    SemanticProperties.Description="Bodyweight workout button"
                     Clicked="BodyweightBtn_Clicked"/>
                 
-                <ImageButton 
-                     Source="custom.png"
-                     CornerRadius="65"
-                     HeightRequest="120"
-                     WidthRequest="120"
-                     Aspect="AspectFit"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"
-                     SemanticProperties.Description="Add custom workout button"
+            <ImageButton 
+                    Source="custom.png"
+                    CornerRadius="65"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    Aspect="AspectFit"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    SemanticProperties.Description="Add custom workout button"
                     Clicked="CustomBtn_Clicked"/>
 
-            </Grid>
+        </Grid>
             
-            <Button
-                x:Name="LogsBtn"                
-                Text="Logs" 
-                HorizontalOptions="Center"
-                SemanticProperties.Hint="View logs button"
-                Clicked="LogsBtn_Clicked"
-                />
-        </VerticalStackLayout>
-    </ScrollView>
-
+        <Button
+            x:Name="LogsBtn"                
+            Text="Logs" 
+            HorizontalOptions="Center"
+            SemanticProperties.Description="View logs button"
+            Clicked="LogsBtn_Clicked" />
+            
+    </VerticalStackLayout>
 </ContentPage>

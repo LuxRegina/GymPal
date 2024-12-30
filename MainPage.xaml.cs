@@ -1,45 +1,42 @@
 ﻿
-
 namespace GymPal
 {
     public partial class MainPage : ContentPage
-    {
-        int count = 0;
-
+    {        
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void LogsBtn_Clicked(object sender, EventArgs e)
+        private async void LogsBtn_Clicked(object sender, EventArgs e)
         {
-          // TBD Open Logs view   
+            // await Navigation.PushAsync(new Logs()); 
         }
 
-        private void ProfileBtn_Clicked(object sender, EventArgs e)
+        private async void ProfileBtn_Clicked(object sender, EventArgs e)
         {
-            // TBD Open manage profile view
+            // await Navigation.PushAsync(new Profile());
         }
 
-        private void KonditionBtn_Clicked(object sender, EventArgs e)
+        private async void KonditionBtn_Clicked(object sender, EventArgs e)
         {
-            // TBD Open Kondition view
+            // await Navigation.PushAsync(new Kondition());
         }
-
+        
+        // Brings user to Free weight view.
         private async void FreeweightBtn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new FreeweightView());
         }
 
-        private void BodyweightBtn_Clicked(object sender, EventArgs e)
+        private async void BodyweightBtn_Clicked(object sender, EventArgs e)
         {
-            // TBD Open Bodyweight view
+            await Navigation.PushAsync(new BodyWeight());
         }
 
-        private void CustomBtn_Clicked(object sender, EventArgs e)
+        private async void CustomBtn_Clicked(object sender, EventArgs e)
         {
-            // TBD Open Custom view
+             await Navigation.PushAsync(new Custom());
         }
     }
-
 }
