@@ -40,7 +40,7 @@
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-            
+
             <Grid WidthRequest="300" HeightRequest="300" HorizontalOptions="Center">
 
                 <ImageButton 
@@ -52,7 +52,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     SemanticProperties.Description="testPicture" Clicked="RunningButton_Clicked" />
-                
+
                 <ImageButton 
                      Source="friavikter.png"
                      Background="Transparent"
@@ -62,7 +62,7 @@
                      HorizontalOptions="End"
                      VerticalOptions="Start"
                      SemanticProperties.Description="testPicture" />
-                
+
                 <ImageButton 
                      Source="kroppsvikt.png"
                      Background="Transparent"
@@ -72,7 +72,7 @@
                      HorizontalOptions="Start"
                      VerticalOptions="End"
                      SemanticProperties.Description="testPicture" />
-                
+
                 <ImageButton 
                      Source="custom.png"
                      Background="Transparent"
@@ -84,14 +84,6 @@
                      SemanticProperties.Description="testPicture" />
 
             </Grid>
-
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Logs" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center"/>
         </VerticalStackLayout>
     </ScrollView>
 
