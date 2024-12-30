@@ -47,7 +47,8 @@
                     Clicked="RunningButton_Clicked" />
 
                 <ImageButton 
-                     Source="friavikter.png"                    
+                     Source="friavikter.png"  
+                     CornerRadius="65"
                      HeightRequest="120"
                      WidthRequest="120"
                      Aspect="AspectFit"
@@ -57,7 +58,8 @@
                     Clicked="FreeweightBtn_Clicked"/>
 
                 <ImageButton 
-                     Source="kroppsvikt.png"                     
+                     Source="kroppsvikt.png"  
+                     CornerRadius="65"
                      HeightRequest="120"
                      WidthRequest="120"
                      Aspect="AspectFit"
