@@ -1,102 +1,97 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GymPal.FreeweightView"
-             Title="FreeweightView">
+             x:Class="GymPal.Pages.FreeweightView">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="10,0" Spacing="40">
-            <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
-                <Label
-                    Text="Free weights"
-                    Style="{StaticResource Headline}"
-                    SemanticProperties.HeadingLevel="Level1" 
-                    HorizontalOptions="Center"/>
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Header -->
+        <Grid Padding="10">
+            <!-- Rund hantelbild -->
+            <Frame WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="#3CBA92"
+                   HorizontalOptions="Start" VerticalOptions="Center">
+                <Image Source="friavikter.png" Aspect="AspectFit" />
+            </Frame>
 
-                <ImageButton 
-                    x:Name="profilBtn"
-                    Source="friavikter.png"
-                    CornerRadius="20"
-                    HeightRequest="80"
-                    WidthRequest="80"
-                    Aspect="AspectFit"
-                    HorizontalOptions="Start"
-                    SemanticProperties.Description="Free weights view." />
-                    
+            <!-- Titel -->
+            <Label Text="Program"
+                   FontSize="35"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="#3CBA92"
+                   FontAttributes="Bold" />
 
-                <!--Not used on Home screen, but used everywhere else.-->
-                <!--<ImageButton               
-                    Source="homeicon.png"
-                    Background="Transparent"
-                    HeightRequest="50"
-                    WidthRequest="50"
-                    Aspect="AspectFit"
-                    HorizontalOptions="End"
-                    VerticalOptions="Start"
-                    SemanticProperties.Description="Home button" />-->
-            </Grid>
+            <!-- Tillbaka-pil -->
+            <ImageButton 
+                Source="homeicon.png"
+                CornerRadius="20"
+                HeightRequest="80"
+                WidthRequest="80"
+                Aspect="AspectFit"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                SemanticProperties.Description="Manage home button." 
+                Clicked="HomeBtn_Clicked" />
 
-            <Label
-                Text="Options..:"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Free weights page text" />
 
-            <Grid WidthRequest="300" HeightRequest="300" HorizontalOptions="Center">
-                <ImageButton 
-                    Source="kondition.png"
-                    HeightRequest="120"
-                    CornerRadius="65"
-                    WidthRequest="120"
-                    Aspect="AspectFit"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Start"
-                    SemanticProperties.Description="Kondition workout button" 
-                    />
+        </Grid>
 
-                <ImageButton 
-                     Source="friavikter.png"
-                     CornerRadius="65"
-                     HeightRequest="120"
-                     WidthRequest="120"
-                     Aspect="AspectFit"
-                     HorizontalOptions="End"
-                     VerticalOptions="Start"
-                     SemanticProperties.Description="Freeweights workout button" 
-                        />
+        <!-- Skrollbar + Träningsrutor -->
+        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
+            <StackLayout Spacing="20">
+                <!-- Träningsrutor -->
+                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Chest day - Time: 45 min - Intensity: Low" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Back day - Time: 1h - Intensity: High" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Leg day - Time: 1,5h - Intensity: High" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Arm day - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
+                           TextColor="#000000" FontSize="15" />
+                </Frame>
 
-                <ImageButton 
-                     Source="kroppsvikt.png"
-                     CornerRadius="65"
-                     HeightRequest="120"
-                     WidthRequest="120"
-                     Aspect="AspectFit"
-                     HorizontalOptions="Start"
-                     VerticalOptions="End"
-                     SemanticProperties.Description="Bodyweight workout button"
-                        />
+            </StackLayout>
+        </ScrollView>
 
-                <ImageButton 
-                     Source="custom.png"
-                     CornerRadius="65"
-                     HeightRequest="120"
-                     WidthRequest="120"
-                     Aspect="AspectFit"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"
-                     SemanticProperties.Description="Add custom workout button"
-                        />
+        <!-- Bottenknappar -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
+            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
+                    HeightRequest="50" WidthRequest="50" CornerRadius="12" 
+                    HorizontalOptions="Center" VerticalOptions="End" />
 
-            </Grid>
-
-            <Button
-                x:Name="LogsBtn"                
-                Text="Logs" 
-                HorizontalOptions="Center"
-                SemanticProperties.Hint="View logs button"
-                
-                />
-        </VerticalStackLayout>
-    </ScrollView>
-
+            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
+                    HeightRequest="50" WidthRequest="50" CornerRadius="12" 
+                    HorizontalOptions="Center" VerticalOptions="End" Grid.Column="1" />
+        </Grid>
+    </Grid>
 </ContentPage>

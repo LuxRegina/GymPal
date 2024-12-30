@@ -1,4 +1,5 @@
-namespace GymPal;
+namespace GymPal.Pages;
+
 
 public partial class FreeweightView : ContentPage
 {
@@ -6,4 +7,11 @@ public partial class FreeweightView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+	private async void HomeBtn_Clicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new MainPage());
+	}
+
 }
