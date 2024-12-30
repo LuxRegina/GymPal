@@ -12,5 +12,7 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    <ShellContent Title="RunningView" ContentTemplate="{DataTemplate local:RunningView}" Route="RunningView" />
+    <ShellContent Title="AddRunningWorkout" ContentTemplate="{DataTemplate local:AddRunningWorkout}" Route="AddRunningWorkout" />
 
 </Shell>
