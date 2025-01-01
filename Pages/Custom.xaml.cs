@@ -1,4 +1,4 @@
-namespace GymPal;
+namespace GymPal.Pages;
 
 public partial class Custom : ContentPage
 {
@@ -7,14 +7,21 @@ public partial class Custom : ContentPage
         InitializeComponent();
     }
 
-    // Brings user back to Home view.
-    private async void HomeBtn_Clicked(object sender, EventArgs e)
+	// Brings user back to Home view. (fungerar inte)
+	/*private async void HomeBtn_Clicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
-    }
+    }*/
 
-    private async void CreateBtn_Clicked(object sender, EventArgs e)
+	private async void HomeBtn_Clicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new MainPage());
+	}
+
+	private async void CreateBtn_Clicked(object sender, EventArgs e)
     {
-        // TBD 
-    }
+		// TBD 
+		await Navigation.PushAsync(new Custom2());
+	}
+
 }

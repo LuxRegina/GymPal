@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GymPal.BodyWeight"
+             x:Class="GymPal.Pages.BodyWeight"
              BackgroundColor="{StaticResource Background}">
 
-    
     <VerticalStackLayout Padding="10,0" Spacing="20">
         <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
             <Image 
@@ -38,7 +37,6 @@
             <Line X1="0" Y1="0" X2="500" Y2="0" 
                     Stroke="{StaticResource SecondaryGreen}"
                     VerticalOptions="End" />
-
         </Grid>
 
         <ScrollView> 
@@ -50,12 +48,23 @@
             </Grid>             
         </ScrollView>
 
-        <Button
+        <!-- <Button
             x:Name="AddBtn"                
             Text="+"
             WidthRequest="80"
             HorizontalOptions="Center"
             SemanticProperties.Description="Add bodyweight workout button." />
-            
+        -->
+
+        <!-- Provisorisk knapp till nästa sida -->
+        <ImageButton Source="homeicon.png"
+                    CornerRadius="20"
+                    HeightRequest="60"
+                    WidthRequest="60"
+                    Aspect="AspectFit"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+
+                    Clicked="View2Btn_Clicked" />
     </VerticalStackLayout>    
 </ContentPage>
