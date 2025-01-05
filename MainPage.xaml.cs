@@ -1,4 +1,5 @@
-﻿
+﻿using GymPal.Pages;
+
 namespace GymPal
 {
     public partial class MainPage : ContentPage
@@ -15,19 +16,18 @@ namespace GymPal
 
         private async void LogsBtn_Clicked(object sender, EventArgs e)
         {
-            // await Navigation.PushAsync(new Logs()); 
+            await Navigation.PushAsync(new LogsView()); 
         }
 
         private async void ProfileBtn_Clicked(object sender, EventArgs e)
         {
-            // await Navigation.PushAsync(new Profile());
+            await Navigation.PushAsync(new ProfileView());
         }
         
-        // Brings user to Free weight view.
         private async void FreeweightBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new FreeweightView());
-        }
+			await Navigation.PushAsync(new FreeweightView());
+		}
 
         private async void BodyweightBtn_Clicked(object sender, EventArgs e)
         {

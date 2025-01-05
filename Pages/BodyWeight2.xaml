@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GymPal.Pages.BodyWeight2">
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Header -->
+        <Grid Padding="10">
+            <!-- Rund bild -->
+            <Image Source="kroppsvikt.png"                   
+              HeightRequest="80"
+              WidthRequest="80"
+              Aspect="AspectFit"
+              HorizontalOptions="Start"
+              VerticalOptions="Start"
+              SemanticProperties.Description="Body weight icon" />
+
+            <!-- Titel -->
+            <Label Text="(BodyWeight2)"
+              Style="{StaticResource SubHeadline}"
+              SemanticProperties.Description="(BodyWeight2)" />
+
+            <!-- Tillbaka-pil -->
+            <ImageButton 
+          Source="homeicon.png"
+          CornerRadius="20"
+          HeightRequest="80"
+          WidthRequest="80"
+          Aspect="AspectFit"
+          HorizontalOptions="End"
+          VerticalOptions="Center"
+          SemanticProperties.Description="Manage home button." 
+          Clicked="HomeBtn_Clicked" />
+        </Grid>
+
+        <!-- Skrollbar + Rutor -->
+        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
+            <StackLayout Spacing="20">
+                <!-- Rutor -->
+                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
+                    <Label Text="..."
+                     TextColor="#000000" FontSize="15" />
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Bottenknapp -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
+            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
+              HeightRequest="50" WidthRequest="50" CornerRadius="12" 
+              HorizontalOptions="Center" VerticalOptions="End" />
+        </Grid>
+    </Grid>
+</ContentPage>
