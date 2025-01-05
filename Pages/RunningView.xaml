@@ -16,9 +16,8 @@
                 HorizontalOptions="Center"
                     VerticalOptions="Center"/>
 
-                <ImageButton 
+                <Image 
                 Source="kondition.png"
-                Background="Transparent"
                 HeightRequest="80"
                 WidthRequest="80"
                 Aspect="AspectFit"
@@ -27,9 +26,10 @@
 
                 <ImageButton 
                 Source="homeicon.png"
-                Background="Transparent"
-                HeightRequest="80"
-                WidthRequest="80"
+                CornerRadius="10"
+                BorderWidth="5"
+                HeightRequest="60"
+                WidthRequest="60"
                 Aspect="AspectFit"
                 HorizontalOptions="End"
                 Clicked="HomeBtn_Clicked"
@@ -42,7 +42,7 @@
             <Grid WidthRequest="400" HeightRequest="100" HorizontalOptions="Center">
                 <ImageButton 
                 Source="addworkout.png"
-                Background="Transparent"
+                CornerRadius="65"
                 HeightRequest="80"
                 WidthRequest="80"
                 Aspect="AspectFit"
