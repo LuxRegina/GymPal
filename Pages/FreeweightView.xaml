@@ -18,11 +18,11 @@
 
             <!-- Titel -->
             <Label 
-                Text="Programs"
+                Text="Workouts"
                 Style="{StaticResource SubHeadline}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"                    
-                SemanticProperties.Description="Program text" />
+                SemanticProperties.Description="Workout text" />
 
             <!-- Tillbaka-pil -->
             <ImageButton 
@@ -48,7 +48,7 @@
                <!-- Programs below -->
                 <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
                             <!-- Makes the grid clickable -->
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>

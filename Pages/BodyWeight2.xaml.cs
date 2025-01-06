@@ -11,4 +11,10 @@ public partial class BodyWeight2 : ContentPage
 	{
 		await Navigation.PushAsync(new BodyWeight());
 	}
+
+    public void StartBtn_Clicked(object sender, EventArgs e)
+    {
+       
+    }
+ 
 }
