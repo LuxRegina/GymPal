@@ -16,11 +16,11 @@
                 SemanticProperties.Description="Custom program icon" />
 
             <Label
-                Text="Custom Programs"
+                Text="Custom Workout"
                 Style="{StaticResource SubHeadline}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"                    
-                SemanticProperties.Description="Custom program text" />
+                SemanticProperties.Description="Custom workout text" />
 
             <ImageButton  
                 Source="homeicon.png"
@@ -40,13 +40,142 @@
 
         </Grid>
 
-        <ScrollView>
-            <Grid WidthRequest="400" HeightRequest="450" HorizontalOptions="Center">
-                <CollectionView>
-                    <!--TBD Dynamically load in previously created workouts from class CustomProgram -->
 
-                </CollectionView>
-            </Grid>
+        <!-- Skrollbar -->
+        <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
+            <StackLayout Spacing="20">
+                <!-- Custom workouts below -->
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}">
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="RunGym_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Run/Gym" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="Medium" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="FrontLegs_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Front Legs" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="Medium" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="PullUp_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="PullUp Goal" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="30 min" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="Low" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AssDay_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Ass Day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="30 min" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BackDay_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Back day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="45 min" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
+            </StackLayout>
         </ScrollView>
 
         <Button

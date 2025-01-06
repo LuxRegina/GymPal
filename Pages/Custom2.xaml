@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GymPal.Pages.Custom2">
 
-    <Grid RowDefinitions="Auto, *, Auto">
+    <Grid RowDefinitions="Auto, *, Auto, Auto">
         <!-- Header -->
-        <Grid Padding="10">
+        <Grid Padding="10" Grid.Row="0">
             <!-- Rund bild -->
             <Image Source="custom.png"                   
              HeightRequest="80"
@@ -16,9 +16,9 @@
              SemanticProperties.Description="Custom icon" />
 
             <!-- Titel -->
-            <Label Text="Program"
+            <Label Text="Workout"
              Style="{StaticResource SubHeadline}"
-             SemanticProperties.Description="Program" />
+             SemanticProperties.Description="Workout" />
 
             <!-- Tillbaka-pil -->
             <ImageButton Source="homeicon.png"
@@ -28,31 +28,89 @@
                 Aspect="AspectFit"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-
                 Clicked="HomeBtn_Clicked" />
         </Grid>
 
-        <!-- Skrollbar + Rutor -->
-        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Name:" WidthRequest="100" HeightRequest="80" Grid.Column="0" VerticalOptions="Center" TextColor="{StaticResource PrimaryGreen}" Padding="10"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <!-- Workout name -->
+            <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}" Grid.Column="1">
+                <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                    <Grid BackgroundColor="{StaticResource ThirdGreen}" RowSpacing="15">
+                        <Label Text="Cardio Gym Kombo" Style="{StaticResource SmallHeadlineText}" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
+            </Frame>
+        </Grid>
+
+
+        <!-- Skrollbar -->
+        <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450" Grid.Row="2">
             <StackLayout Spacing="20">
-                <!-- Rutor -->
-                <Label Text="Name:" TextColor="#3CBA92"/>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Warmup"
-                    TextColor="#000000" FontSize="15" />
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}" Margin="10">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                            <!-- Makes the grid clickable -->
+                            <!--  <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="FrontLegs_Tapped"/>
+                            </Grid.GestureRecognizers> -->
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Warmup" Style="{StaticResource SmallHeadlineText}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
                 </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Cable row" 
-                    TextColor="#000000" FontSize="15" />
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}" Margin="10">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True" >
+                            <!-- Makes the grid clickable -->
+                            <!-- <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="PullUp_Tapped"/>
+                            </Grid.GestureRecognizers> -->
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Cable row" Style="{StaticResource SmallHeadlineText}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
                 </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}" Margin="10">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True" >
+                            <!-- Makes the grid clickable -->
+                            <!-- <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AssDay_Tapped"/>
+                            </Grid.GestureRecognizers> -->
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Abs" Style="{StaticResource SmallHeadlineText}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                </Frame>
+
             </StackLayout>
         </ScrollView>
 
-        <!-- Bottenknapp -->
-        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
-            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
-             HeightRequest="50" WidthRequest="50" CornerRadius="12" 
-             HorizontalOptions="Center" VerticalOptions="End" />
+        <!-- Bottenknappar -->
+        <Grid Grid.Row="3" ColumnDefinitions="*,*,*" Padding="15">
+            <Button Text="Create &#x0A;exercise" Grid.Column="0" FontSize="15" BackgroundColor="Green" TextColor="#000000" 
+             HeightRequest="80" WidthRequest="100" CornerRadius="12" 
+             HorizontalOptions="Start"  VerticalOptions="End" />
+
+            <Button Text="Choose &#x0A;exercise" Grid.Column="1" FontSize="15" BackgroundColor="Green" TextColor="#000000" 
+             HeightRequest="80" WidthRequest="100" CornerRadius="12" 
+             HorizontalOptions="Center"/>
+
+            <Button Text="Save &#x0A;workout" Grid.Column="2" FontSize="15" BackgroundColor="Green" TextColor="#000000" 
+             HeightRequest="80" WidthRequest="100" CornerRadius="12" 
+             HorizontalOptions="End" VerticalOptions="End" />
         </Grid>
     </Grid>
 </ContentPage>
