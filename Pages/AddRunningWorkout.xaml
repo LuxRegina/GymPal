@@ -7,7 +7,8 @@
              
     <ScrollView>
         <VerticalStackLayout Padding="10,0" Spacing="40">
-
+            
+            <!--TopScreen components-->
             <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
 
                 <Label
@@ -39,9 +40,8 @@
                 SemanticProperties.Description="testPicture" />
 
             </Grid>
-
-            <Frame x:Name="RunForm" HeightRequest="100" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False"></Frame>
-
+            
+            <!--Tappable Frames-->
             <StackLayout x:Name="FrameStack" HeightRequest="500" WidthRequest="400" IsVisible="True">
                 <Frame x:Name="RunningFrame" HeightRequest="80" BackgroundColor="#D7EDE6" Margin="5" IsVisible="True">
                     <VerticalStackLayout>
@@ -85,6 +85,134 @@
                 </Frame>
 
             </StackLayout>
+            
+            <!--NoneVisable Forms-->
+            
+            <!--Running Form Visable once Running is tapped-->
+            <Frame x:Name="RunForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+                <StackLayout>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Distance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry HorizontalTextAlignment="Start" VerticalTextAlignment="Start" WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Transparent"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="55" Padding="7" Margin="5">
+                        <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Editor WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"></Editor>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Loction:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" Padding="10" Margin="5">
+                        <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                    </Grid>
+
+                </StackLayout>
+            </Frame>
+
+            <!--Walking Form Visable once Walking is tapped-->
+            <Frame x:Name="WalkForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+                <StackLayout>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Distance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Loction:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" Padding="10" Margin="5">
+                        <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            
+            <!--Swimming Form Visable once Swimming is tapped-->
+            <Frame x:Name="SwimForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+                <StackLayout>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Distance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Style:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" Padding="10" Margin="5">
+                        <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            
+            <!--Cycling Form Visable once Cycling is tapped-->
+            <Frame x:Name="CycleForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+                <StackLayout>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Distance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Loction:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" Padding="10" Margin="5">
+                        <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            
+            <!--Other Form Visable once Other is tapped-->
+            <Frame x:Name="OtherForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+                <StackLayout>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Type:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                        <Label Text="Intensity:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid WidthRequest="400" Padding="10" Margin="5">
+                        <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                    </Grid>
+                </StackLayout>
+            </Frame>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
