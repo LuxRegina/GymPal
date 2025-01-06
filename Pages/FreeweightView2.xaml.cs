@@ -11,4 +11,9 @@ public partial class FreeweightView2 : ContentPage
 	{
 		await Navigation.PushAsync(new FreeweightView());
 	}
+
+    private void StartBtn_Clicked(object sender, EventArgs e)
+    {
+		// TBD Add timer somewhere until user presses Finish Button (that replaces the Start btn after click)
+    }
 }

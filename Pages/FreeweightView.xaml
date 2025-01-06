@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GymPal.Pages.FreeweightView">
+             x:Class="GymPal.Pages.FreeweightView"
+             BackgroundColor="{StaticResource Background}">
 
-    <Grid RowDefinitions="Auto, *, Auto">
+    <VerticalStackLayout Padding="10,0" Spacing="20">
         <!-- Header -->
-        <Grid Padding="10">
+        <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill" >
             <!-- Rund bild -->
             <Image Source="friavikter.png"                   
                     HeightRequest="80"
@@ -16,9 +17,12 @@
                     SemanticProperties.Description="Free weight icon" />
 
             <!-- Titel -->
-            <Label Text="Program"
-                    Style="{StaticResource SubHeadline}"
-                    SemanticProperties.Description="Program" />
+            <Label 
+                Text="Programs"
+                Style="{StaticResource SubHeadline}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"                    
+                SemanticProperties.Description="Program text" />
 
             <!-- Tillbaka-pil -->
             <ImageButton 
@@ -31,72 +35,158 @@
                 VerticalOptions="Center"
                 SemanticProperties.Description="Manage home button." 
                 Clicked="HomeBtn_Clicked" />
+
+            <Line X1="0" Y1="0" X2="500" Y2="0" 
+                    Stroke="{StaticResource SecondaryGreen}"
+                    VerticalOptions="End" />
+            
         </Grid>
 
-        <!-- Skrollbar + Rutor -->
-        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
+        <!-- Skrollbar -->
+        <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
             <StackLayout Spacing="20">
-                <!-- Rutor -->
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Chest day - Time: 45 min - Intensity: Low" 
-                           TextColor="#000000" FontSize="15" />
+               <!-- Programs below -->
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}">
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Full Body" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
                 </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Back day - Time: 1h - Intensity: High" 
-                           TextColor="#000000" FontSize="15" />
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ArmDay_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Arm day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="Medium" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
                 </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Leg day - Time: 1,5h - Intensity: High" 
-                           TextColor="#000000" FontSize="15" />
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LegDay_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Leg day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="Medium" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
                 </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Arm day - Time: 1h - Intensity: Medium" 
-                           TextColor="#000000" FontSize="15" />
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ChestDay_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Chest day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="30 min" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="Low" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
                 </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
-                           TextColor="#000000" FontSize="15" />
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BackDay_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Back day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="45 min" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
                 </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="Gym (custom) - Time: 1h - Intensity: Medium" 
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
+
             </StackLayout>
         </ScrollView>
 
         <!-- Bottenknapp -->
-        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
-            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
-                    HeightRequest="50" WidthRequest="50" CornerRadius="12" 
-                    HorizontalOptions="Center" VerticalOptions="End" />
-
-        <!-- Provisorisk knapp till nästa sida -->
-            <ImageButton 
-                Source="homeicon.png"
-                CornerRadius="20"
-                HeightRequest="60"
-                WidthRequest="60"
-                Aspect="AspectFit"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-
-                Clicked="View2Btn_Clicked" />
-        </Grid>
-    </Grid>
+        <Button
+           x:Name="AddBtn"                
+           Text="Add workout"         
+           WidthRequest="250"
+           HorizontalOptions="Center"
+           SemanticProperties.Description="Add freeweight workout button."
+           Clicked="AddBtn_Clicked" />
+        
+    </VerticalStackLayout>
 </ContentPage>
