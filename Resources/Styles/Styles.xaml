@@ -100,12 +100,12 @@
 
     <Style TargetType="Editor">
         <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="{StaticResource White}" />
         <Setter Property="FontFamily" Value="JostSemiBold"/>
         <Setter Property="FontSize" Value="20" />
         <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
-        <Setter Property="MinimumHeightRequest" Value="44"/>
-        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="MinimumHeightRequest" Value="45"/>
+        <Setter Property="MinimumWidthRequest" Value="45"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
@@ -118,6 +118,13 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
+    </Style>
+
+    <Style TargetType="Editor" x:Key="NotesText">
+        <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="JostSemiBold"/>
+        <Setter Property="HorizontalOptions" Value="Start" />
     </Style>
 
     <Style TargetType="Entry">
