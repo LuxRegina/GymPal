@@ -7,14 +7,18 @@
     <VerticalStackLayout Padding="10,0" Spacing="20">
         <!-- Header -->
         <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
-            <!-- Rund bild -->
-            <Image Source="kroppsvikt.png"                   
-              HeightRequest="80"
-              WidthRequest="80"
-              Aspect="AspectFit"
-              HorizontalOptions="Start"
-              VerticalOptions="Start"
-              SemanticProperties.Description="Body weight icon" />
+
+            <!-- Tillbaka-pil -->
+            <ImageButton 
+                  Source="back.png"
+                  CornerRadius="20"
+                  HeightRequest="80"
+                  WidthRequest="80"
+                  Aspect="AspectFit"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start"
+                  SemanticProperties.Description="Manage home button." 
+                  Clicked="HomeBtn_Clicked" />
 
             <!-- Titel -->
             <Label 
@@ -24,17 +28,14 @@
                 VerticalOptions="Center"                    
                 SemanticProperties.Description="Core workout title" />
 
-            <!-- Tillbaka-pil -->
-            <ImageButton 
-                  Source="homeicon.png"
-                  CornerRadius="20"
-                  HeightRequest="80"
-                  WidthRequest="80"
-                  Aspect="AspectFit"
-                  HorizontalOptions="End"
-                  VerticalOptions="Center"
-                  SemanticProperties.Description="Manage home button." 
-                  Clicked="HomeBtn_Clicked" />
+            <!-- Rund bild -->
+            <Image Source="kroppsvikt.png"                   
+              HeightRequest="80"
+              WidthRequest="80"
+              Aspect="AspectFit"
+              HorizontalOptions="End"
+              VerticalOptions="Center"
+              SemanticProperties.Description="Body weight icon" />
 
             <Line X1="0" Y1="0" X2="500" Y2="0" 
                    Stroke="{StaticResource SecondaryGreen}"
