@@ -54,8 +54,8 @@
                                 <TapGestureRecognizer Tapped="CoreProgram_Tapped"/>
                             </Grid.GestureRecognizers>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="65"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="180" />
@@ -64,6 +64,7 @@
                             </Grid.ColumnDefinitions>
                             <!--Content of Grid below -->
                             <Label Grid.Row="0" Grid.Column="0" Text="Core" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="CoreBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
                             <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
                             <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
                             <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
@@ -80,8 +81,8 @@
                                 <TapGestureRecognizer Tapped="ArmDay_Tapped"/>
                             </Grid.GestureRecognizers>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="65"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="180" />
@@ -90,6 +91,7 @@
                             </Grid.ColumnDefinitions>
                             <!--Content of Grid below -->
                             <Label Grid.Row="0" Grid.Column="0" Text="Arm day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="ArmDayBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
                             <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
                             <Label Grid.Row="1" Grid.Column="1" Text="30 min" Style="{StaticResource SmallSublineText}" />
                             <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
@@ -106,8 +108,8 @@
                                 <TapGestureRecognizer Tapped="LegDay_Tapped"/>
                             </Grid.GestureRecognizers>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="65"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="180" />
@@ -116,6 +118,7 @@
                             </Grid.ColumnDefinitions>
                             <!--Content of Grid below -->
                             <Label Grid.Row="0" Grid.Column="0" Text="Leg day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="LegDayBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
                             <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
                             <Label Grid.Row="1" Grid.Column="1" Text="30 min" Style="{StaticResource SmallSublineText}" />
                             <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
@@ -132,8 +135,8 @@
                                 <TapGestureRecognizer Tapped="ChestDay_Tapped"/>
                             </Grid.GestureRecognizers>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="65"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="180" />
@@ -142,6 +145,7 @@
                             </Grid.ColumnDefinitions>
                             <!--Content of Grid below -->
                             <Label Grid.Row="0" Grid.Column="0" Text="Chest day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="ChestDayBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
                             <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
                             <Label Grid.Row="1" Grid.Column="1" Text="30 min" Style="{StaticResource SmallSublineText}" />
                             <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
@@ -158,8 +162,8 @@
                                 <TapGestureRecognizer Tapped="BackDay_Tapped"/>
                             </Grid.GestureRecognizers>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="65"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="180" />
@@ -168,6 +172,7 @@
                             </Grid.ColumnDefinitions>
                             <!--Content of Grid below -->
                             <Label Grid.Row="0" Grid.Column="0" Text="Back day" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="BackDayBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
                             <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
                             <Label Grid.Row="1" Grid.Column="1" Text="45 min" Style="{StaticResource SmallSublineText}" />
                             <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
