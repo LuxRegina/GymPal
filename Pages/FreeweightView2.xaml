@@ -25,6 +25,7 @@
 
             <!-- Tillbaka-pil -->
             <ImageButton 
+                 x:Name="BackIcon"
                  Source="homeicon.png"
                  CornerRadius="20"
                  HeightRequest="80"
@@ -33,6 +34,7 @@
                  HorizontalOptions="End"
                  VerticalOptions="Center"
                  SemanticProperties.Description="Manage home button." 
+                 IsEnabled="True"
                  Clicked="HomeBtn_Clicked" />
 
             <Line X1="0" Y1="0" X2="500" Y2="0" 
@@ -44,6 +46,17 @@
         <!-- Skrollbar -->
         <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
             <StackLayout Spacing="20">
+                <!-- Timer -->
+                <Grid x:Name="TimerGrid" HeightRequest="60" BackgroundColor="Transparent" IsVisible="False">
+                    <HorizontalStackLayout>
+                        <Label Text="Start Time:" WidthRequest="250" Style="{StaticResource SubHeadline}"/>
+                        <Border WidthRequest="150" VerticalOptions="Center">
+                            <Label x:Name="TimeDisplay" Text="00:00" Style="{StaticResource SubHeadline}"/>
+                        </Border>
+                        
+                    </HorizontalStackLayout>
+                </Grid>
+                
                 <!-- Exercise boxes below -->
                 <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
@@ -63,7 +76,7 @@
                             <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}"/>
                             <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
-                            <Editor Grid.Row="1" Grid.Column="0" x:Name="BenchPressNotes" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
+                            <Editor x:Name="BenchPressNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
                             
                             <Entry Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
                             <Entry Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
