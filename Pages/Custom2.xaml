@@ -6,29 +6,31 @@
     <Grid RowDefinitions="Auto, *, Auto, Auto">
         <!-- Header -->
         <Grid Padding="10" Grid.Row="0">
-            <!-- Rund bild -->
-            <Image Source="custom.png"                   
-             HeightRequest="80"
-             WidthRequest="80"
-             Aspect="AspectFit"
-             HorizontalOptions="Start"
-             VerticalOptions="Start"
-             SemanticProperties.Description="Custom icon" />
 
+            <!-- Tillbaka-pil -->
+            <ImageButton Source="back.png"
+                CornerRadius="20"
+                HeightRequest="80"
+                WidthRequest="80"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Clicked="HomeBtn_Clicked" />
+            
             <!-- Titel -->
             <Label Text="Workout"
              Style="{StaticResource SubHeadline}"
              SemanticProperties.Description="Workout" />
 
-            <!-- Tillbaka-pil -->
-            <ImageButton Source="homeicon.png"
-                CornerRadius="20"
-                HeightRequest="80"
-                WidthRequest="80"
-                Aspect="AspectFit"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                Clicked="HomeBtn_Clicked" />
+            <!-- Rund bild -->
+            <Image Source="custom.png"                   
+             HeightRequest="80"
+             WidthRequest="80"
+             Aspect="AspectFit"
+             HorizontalOptions="End"
+             VerticalOptions="Center"
+             SemanticProperties.Description="Custom icon" />
+
         </Grid>
 
 
