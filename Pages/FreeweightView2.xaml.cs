@@ -21,8 +21,9 @@ public partial class FreeweightView2 : ContentPage
 	// Changes text in StartBtn
 	// Starts/stops the timer
 	// Shows start time to user
-	// Makes Backbutton unclickable until user presses Finish
-    private void StartBtn_Clicked(object sender, EventArgs e)
+	// Makes Backbutton unclickable if workout is in progress
+	// Moves user to Homepage when workout is done. (pressed Finish)
+    private async void StartBtn_Clicked(object sender, EventArgs e)
     {
 		if (StartBtn.Text == "Start")
 		{
@@ -32,8 +33,7 @@ public partial class FreeweightView2 : ContentPage
 
 			TimeDisplay.Text = $"{DateTime.Now:HH:mm}";
 			startTimer = DateTime.Now;
-
-			Debug.WriteLine(startTimer);
+						
 		}
 		else if (StartBtn.Text == "Finish")
 		{
@@ -44,20 +44,21 @@ public partial class FreeweightView2 : ContentPage
 
 			stopTimer = DateTime.Now;			
 
+			//Send this along with the other data to Logs!
 			TimeSpan workoutDuration = CountTime(startTimer, stopTimer);
 
-			// TBD Save to Logs!!
+            // TBD Save to Logs!!
 
-		}
+            await Navigation.PushAsync(new MainPage());
+        }
     }
 
 	// Counts how long the workout lasted.
     private static TimeSpan CountTime(DateTime startTimer, DateTime stopTimer)
     {
         TimeSpan duration = stopTimer - startTimer;
-        Debug.WriteLine($"Duration: {duration}");
+        Debug.WriteLine($"Duration of workout: {duration}");  
 		
-		return duration;
-		
+		return duration;		
     }
 }
