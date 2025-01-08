@@ -70,6 +70,7 @@
                 
                <ImageButton 
                     Source="custom.png"
+                    IsEnabled="False"
                     CornerRadius="65"
                     HeightRequest="120"
                     WidthRequest="120"

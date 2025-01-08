@@ -182,7 +182,8 @@
 
         <!-- Bottenknapp -->
         <Button
-           x:Name="AddBtn"                
+           x:Name="AddBtn"  
+           IsEnabled="False"
            Text="Add workout"         
            WidthRequest="250"
            HorizontalOptions="Center"
