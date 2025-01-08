@@ -9,31 +9,34 @@
 
             <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
 
-                <Label
+                <!-- Tillbaka-pil -->
+                <ImageButton 
+                  Source="back.png"
+                  CornerRadius="20"
+                  HeightRequest="80"
+                  WidthRequest="80"
+                  Aspect="AspectFit"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start"
+                  SemanticProperties.Description="Manage home button." 
+                  Clicked="HomeBtn_Clicked" />
+
+                <!-- Titel -->
+                <Label 
                 Text="Workout"
                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level1" 
                 HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                VerticalOptions="Center"                    
+                SemanticProperties.Description="Runningview" />
 
-                <ImageButton 
-                Source="kondition.png"
-                Background="Transparent"
-                HeightRequest="80"
-                WidthRequest="80"
-                Aspect="AspectFit"
-                HorizontalOptions="Start"
-                SemanticProperties.Description="testPicture" />
-
-                <ImageButton 
-                Source="homeicon.png"
-                Background="Transparent"
+                <!-- Rund bild -->
+                <Image Source="kondition.png"                   
                 HeightRequest="80"
                 WidthRequest="80"
                 Aspect="AspectFit"
                 HorizontalOptions="End"
-                Clicked="HomeBtn_Clicked"
-                SemanticProperties.Description="testPicture" />
+                VerticalOptions="Center"
+                SemanticProperties.Description="koniditionikon" />
 
             </Grid>
 
