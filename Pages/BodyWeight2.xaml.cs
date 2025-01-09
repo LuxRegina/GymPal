@@ -1,8 +1,14 @@
+using System.Diagnostics;
+
 namespace GymPal.Pages;
 
 public partial class BodyWeight2 : ContentPage
 {
-	public BodyWeight2()
+
+    private DateTime startTimer;
+    private DateTime stopTimer;
+
+    public BodyWeight2()
 	{
 		InitializeComponent();
 	}
@@ -11,4 +17,49 @@ public partial class BodyWeight2 : ContentPage
 	{
 		await Navigation.PushAsync(new BodyWeight());
 	}
+
+    // Changes text in StartBtn
+    // Starts/stops the timer
+    // Shows start time to user
+    // Makes Backbutton unclickable if workout is in progress
+    // Moves user to Homepage when workout is done. (pressed Finish)
+    private async void StartBtn_Clicked(object sender, EventArgs e)
+    {
+        if (StartBtn.Text == "Start")
+        {
+            StartBtn.Text = "Finish";
+            TimerGrid.IsVisible = true;
+            BackIcon.IsEnabled = false;
+
+            TimeDisplay.Text = $"{DateTime.Now:HH:mm}";
+            startTimer = DateTime.Now;
+                        
+        }
+        else if (StartBtn.Text == "Finish")
+        {
+            StartBtn.Text = "Start";
+            TimerGrid.IsVisible = false;
+            TimeDisplay.Text = $"00:00";
+            BackIcon.IsEnabled = true;
+
+            stopTimer = DateTime.Now;
+
+            //Send this along with the other data to Logs!
+            TimeSpan workoutDuration = CountTime(startTimer, stopTimer);
+
+            // TBD Save to Logs!!
+
+            await Navigation.PushAsync(new MainPage());
+        }
+    }
+
+    // Counts how long the workout lasted.
+    private static TimeSpan CountTime(DateTime startTimer, DateTime stopTimer)
+    {
+        TimeSpan duration = stopTimer - startTimer;
+        Debug.WriteLine($"Duration of workout: {duration}");
+
+        return duration;
+    }
+
 }

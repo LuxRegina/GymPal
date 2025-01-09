@@ -11,18 +11,18 @@
             <Label Text="Logs"
                     Style="{StaticResource SubHeadline}"
                     SemanticProperties.Description="Logs" />
-
+            
             <!-- Tillbaka-pil -->
             <ImageButton 
-                Source="homeicon.png"
-                CornerRadius="20"
-                HeightRequest="80"
-                WidthRequest="80"
-                Aspect="AspectFit"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                SemanticProperties.Description="Manage home button." 
-                Clicked="HomeBtn_Clicked" />
+                  Source="back.png"
+                  CornerRadius="20"
+                  HeightRequest="80"
+                  WidthRequest="80"
+                  Aspect="AspectFit"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start"
+                  SemanticProperties.Description="Manage home button." 
+                  Clicked="HomeBtn_Clicked" />
 
 
         </Grid>

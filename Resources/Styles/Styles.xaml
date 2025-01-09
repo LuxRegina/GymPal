@@ -120,6 +120,13 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Editor" x:Key="NotesText">
+        <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="JostSemiBold"/>
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
     <Style TargetType="Entry">
         <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
         <Setter Property="BackgroundColor" Value="White" />
