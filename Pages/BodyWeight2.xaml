@@ -76,9 +76,13 @@
                             <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
                             
+
                             <Editor x:Name="RussianTwistNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" Text="{Binding InputValue}" />
                             <Entry Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
                             <Entry Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Editor x:Name="NotesInput" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
+                            <Entry x:Name="RepsInput" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsInput" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
                             
                         </Grid>
                     </Frame>
@@ -102,8 +106,8 @@
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
 
                             <Editor x:Name="SitUpsNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
-                            <Entry Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
 
                         </Grid>
                     </Frame>
@@ -127,8 +131,8 @@
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
 
                             <Editor x:Name="LegRaisesBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
-                            <Entry Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
 
                         </Grid>
                     </Frame>
@@ -152,8 +156,8 @@
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
 
                             <Editor x:Name="BirdDogBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
-                            <Entry Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
 
                         </Grid>
                     </Frame>
