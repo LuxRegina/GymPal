@@ -77,8 +77,8 @@
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
                             
                             <Editor x:Name="NotesInput" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
-                            <Entry x:Name="RepsInput" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsInput" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsInput1" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsInput1" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
                             
                         </Grid>
                     </Frame>
@@ -102,8 +102,8 @@
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
 
                             <Editor x:Name="SitUpsNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes2" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes2" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
 
                         </Grid>
                     </Frame>
@@ -127,8 +127,8 @@
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
 
                             <Editor x:Name="LegRaisesBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes3" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes3" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
 
                         </Grid>
                     </Frame>
@@ -152,8 +152,8 @@
                             <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
 
                             <Editor x:Name="BirdDogBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes4" Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes4" Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
 
                         </Grid>
                     </Frame>

@@ -80,9 +80,9 @@
                             <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
                             <Editor x:Name="BenchPressNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
 
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="WeightNotes" Grid.Row="2" Grid.Column="3" Placeholder="10" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes1" Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes1" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="WeightNotes1" Grid.Row="2" Grid.Column="3" Placeholder="10" Style="{StaticResource SmallSublineText}" />
                         </Grid>
                     </Frame>
                 </Frame>
@@ -107,9 +107,9 @@
                             <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
                             <Editor x:Name="SquatNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
 
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="WeightNotes" Grid.Row="2" Grid.Column="3" Placeholder="10" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes2" Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes2" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="WeightNotes2" Grid.Row="2" Grid.Column="3" Placeholder="10" Style="{StaticResource SmallSublineText}" />
                         </Grid>
                     </Frame>
                 </Frame>
@@ -134,9 +134,9 @@
                             <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
                             <Editor x:Name="LegPressNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
 
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="WeightNotes" Grid.Row="2" Grid.Column="3" Placeholder="25" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes3" Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes3" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="WeightNotes3" Grid.Row="2" Grid.Column="3" Placeholder="25" Style="{StaticResource SmallSublineText}" />
                         </Grid>
                     </Frame>
                 </Frame>
@@ -161,9 +161,9 @@
                             <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
                             <Editor x:Name="DipsNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
 
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="10" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="WeightNotes" Grid.Row="2" Grid.Column="3" Placeholder="0" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes4" Grid.Row="1" Grid.Column="1" Placeholder="10" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes4" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="WeightNotes4" Grid.Row="2" Grid.Column="3" Placeholder="0" Style="{StaticResource SmallSublineText}" />
                         </Grid>
                     </Frame>
                 </Frame>
@@ -188,9 +188,9 @@
                             <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
                             <Editor x:Name="SitUpsNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
 
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="10" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="WeightNotes" Grid.Row="2" Grid.Column="3" Placeholder="0" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes5" Grid.Row="1" Grid.Column="1" Placeholder="10" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes5" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="WeightNotes5" Grid.Row="2" Grid.Column="3" Placeholder="0" Style="{StaticResource SmallSublineText}" />
                         </Grid>
                     </Frame>
                 </Frame>
@@ -215,9 +215,9 @@
                             <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
                             <Editor x:Name="DeadliftNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
 
-                            <Entry x:Name="RepsNotes" Grid.Row="1" Grid.Column="1" Placeholder="8" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="SetsNotes" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry x:Name="WeightNotes" Grid.Row="2" Grid.Column="3" Placeholder="80" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="RepsNotes6" Grid.Row="1" Grid.Column="1" Placeholder="8" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="SetsNotes6" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
+                            <Entry x:Name="WeightNotes6" Grid.Row="2" Grid.Column="3" Placeholder="80" Style="{StaticResource SmallSublineText}" />
                         </Grid>
                     </Frame>
                 </Frame>
