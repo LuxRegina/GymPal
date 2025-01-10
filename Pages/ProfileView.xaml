@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GymPal.Pages.ProfileView">
 
-    <Grid RowDefinitions="Auto, *, Auto">
+    <VerticalStackLayout Padding="10" Spacing="10">
         <!-- Header -->
-        <Grid Padding="10">
+        <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
             <!-- Tillbaka-pil -->
             <ImageButton 
                 Source="back.png"
@@ -18,46 +18,67 @@
                 SemanticProperties.Description="Manage home button." 
                 Clicked="HomeBtn_Clicked" />
             
-            <!-- Rund bild -->
-            <Image Source="profil.png"                   
-                    HeightRequest="80"
-                    WidthRequest="80"
+            <!-- Titel -->
+            <Label 
+                    Text="Profile"
+                    Style="{StaticResource SubHeadline}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    SemanticProperties.Description="Profile Text" />
+
+            <Line X1="0" Y1="0" X2="500" Y2="0" 
+                    Stroke="{StaticResource SecondaryGreen}"
+                    VerticalOptions="End" />
+
+        </Grid>
+
+        <!-- Rund bild -->
+        <Image Source="profil.png"                   
+                    HeightRequest="100"
+                    WidthRequest="100"
                     Aspect="AspectFit"
-                    HorizontalOptions="End"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     SemanticProperties.Description="Profile icon" />
 
-            <!-- Titel -->
-            <Label Text="Profile"
-                    Style="{StaticResource SubHeadline}"
-                    SemanticProperties.Description="Profile" />
+        <!-- Info -->        
+        <StackLayout Spacing="20">
+            <!-- Name -->
+            <HorizontalStackLayout HeightRequest="45" Spacing="20">
+                <Label Text="Name:" FontSize="25" Style="{StaticResource SubHeadline}" WidthRequest="160" />
+                <Editor x:Name="ProfileName" WidthRequest="260" Placeholder="John Smith" HorizontalTextAlignment="Center" Style="{StaticResource SmallSublineText}" />
+            </HorizontalStackLayout>
+            
+            <!-- Weight -->
+            <HorizontalStackLayout HeightRequest="45" Spacing="20">
+                <Label Text="Weight:" FontSize="25" Style="{StaticResource SubHeadline}" WidthRequest="160"/>
+                <Entry x:Name="Weight"  Keyboard="Numeric" WidthRequest="100" Placeholder="95" HorizontalTextAlignment="Center" Style="{StaticResource SmallSublineText}" />
+                <Label Text="Kg" FontSize="25" Style="{StaticResource SubHeadline}" WidthRequest="50"/>
+                </HorizontalStackLayout>
+            
+            <!-- Goal Weight -->
+            <HorizontalStackLayout HeightRequest="45" Spacing="20">
+                <Label Text="Goal Weight:" FontSize="25" Style="{StaticResource SubHeadline}" WidthRequest="160"/>
+                <Entry x:Name="Weight" Keyboard="Numeric" WidthRequest="100" Placeholder="85" HorizontalTextAlignment="Center" Style="{StaticResource SmallSublineText}" />
+                <Label Text="Kg" FontSize="25" Style="{StaticResource SubHeadline}" WidthRequest="50"/>
+            </HorizontalStackLayout>
+            
+            <!-- Specific Goal -->
+            <Label Text="Specific Goal:" FontSize="25" Style="{StaticResource SubHeadline}" />
+            <Editor x:Name="ProfileName" WidthRequest="400" HeightRequest="100" Placeholder="I want to be able to do a Pull-Up." HorizontalOptions="Center" HorizontalTextAlignment="Start" Style="{StaticResource SmallSublineText}" />
 
-        </Grid>
+        </StackLayout>      
 
-        <!-- Skrollbar + Exempel -->
-        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
-            <StackLayout Spacing="20">
-
-                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="T.ex. uppgifter"
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="T.ex inställningar"
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="10" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="..." 
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-            </StackLayout>
-        </ScrollView>
-
-        <!-- Bottenknapp -->
-        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
-            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
-                    HeightRequest="50" WidthRequest="50" CornerRadius="12" 
-                    HorizontalOptions="Center" VerticalOptions="End" Grid.Column="1" />
-        </Grid>
-    </Grid>
+        <!-- Bottenknapp -->        
+        <Button 
+            Text="Save" 
+            FontSize="20" 
+            BackgroundColor="Green" 
+            TextColor="#000000" 
+            CornerRadius="12" 
+            HorizontalOptions="Center" 
+            VerticalOptions="End" 
+            Clicked="SaveBtn_Clicked"/>
+     
+    </VerticalStackLayout>
 </ContentPage>
