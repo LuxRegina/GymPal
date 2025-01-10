@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using GymPal.Pages;
+using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Platform;
+using GymPal.ViewModels;
 
 namespace GymPal
 {
@@ -8,7 +10,13 @@ namespace GymPal
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder
+			builder.Services.AddSingleton<SharedViewModel>();
+
+			builder.Services.AddSingleton<MainPage>();
+			builder.Services.AddSingleton<LogsView>();
+			builder.Services.AddSingleton<BodyWeight2>();
+			
+			builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {

@@ -1,4 +1,5 @@
 ﻿using GymPal.Pages;
+using GymPal.ViewModels;
 
 namespace GymPal
 {

@@ -1,4 +1,6 @@
 ﻿
+using GymPal.ViewModels;
+
 namespace GymPal
 {
     public partial class App : Application
@@ -7,9 +9,14 @@ namespace GymPal
         {
             InitializeComponent();
 
-            //MainPage = new AppShell();
-            MainPage = new NavigationPage(new MainPage());
-        }
+			var services = new ServiceCollection();
+			services.AddSingleton<SharedViewModel>();
+			var provider = services.BuildServiceProvider();
+
+			//MainPage = new AppShell();
+			MainPage = new NavigationPage(new MainPage());
+			DependencyService.RegisterSingleton(provider.GetService<SharedViewModel>());
+		}
 
 
         // Resizes the window to Android window proportions across entire App.
