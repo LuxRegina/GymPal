@@ -1,9 +1,9 @@
-using GymPal.Resources.TempProfileSaveData;
+using GymPal.Resources.ProfileSaveData;
 using System.IO;
-//using Microsoft.UI.Xaml;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Text.Json;
-//using Windows.System;
+
 
 namespace GymPal.Pages;
 
@@ -21,6 +21,7 @@ public partial class ProfileView : ContentPage
 		await Navigation.PushAsync(new MainPage());
 	}
 
+    // Saves the profile input data.
     private void SaveBtn_Clicked(object sender, EventArgs e)
     {
         string name = ProfileName.Text;
@@ -36,44 +37,36 @@ public partial class ProfileView : ContentPage
             SpecificGoal = specificGoal
         };
 
-        FileHelper.SaveToJsonFile(data,fileName);
-        DisplayAlert("Success", "Profile Saved!", "OK");
-        
+        FilePathHelper.SaveToJsonFile(data,fileName);
+        DisplayAlert("Success!","Profile Saved!", "Close");        
     }
 
-    public static T LoadFromJsonFile<T>(string fileName)
+    // Loads previously saved data from profileView.
+    public static ProfileModel LoadFromJsonFile(string fileName)
     {
-        string filePath = FileHelper.GetFilePath(fileName);
-
+        string filePath = FilePathHelper.GetFilePath(fileName);
         string jsonFile = ReadFile(filePath);
-        //if (File.Exists(filePath) && fileName != null)
-        //{
-        //    using (var streamReader = new StreamReader(filePath))
-        //    {
-        //        string json = streamReader.ReadToEnd();
-        //        Debug.WriteLine(json);
-        //        return JsonSerializer.Deserialize<T>(json);
-        //    }
-        //}
-
-        return default;
+        ProfileModel? profile = JsonConvert.DeserializeObject<ProfileModel>(jsonFile);
+        
+        return profile;
     }
 
-    public void LoadProfile()
+    // Reads content of ProfileData.
+    private static string ReadFile(string path)
     {
-        // Display the data from JSON file to the UI.
-        var data = LoadFromJsonFile<ProfileModel>(fileName);
-
-        if (data != null)
-        {
-            ProfileName.Text = data.Name;
-            Weight.Text = data.Weight.ToString();
-            GoalWeight.Text = data.GoalWeight.ToString();
-            SpecificGoal.Text = data.SpecificGoal;
-        }
-      
+        string returnedfile = System.IO.File.ReadAllText(path);
+        return returnedfile;
     }
 
-
-
+    // Updates the UI with the previously saved profile data.
+    public void LoadProfile(ProfileModel profileData)
+    {
+        if (profileData != null)
+        {
+            ProfileName.Text = profileData.Name;
+            Weight.Text = profileData.Weight.ToString();
+            GoalWeight.Text = profileData.GoalWeight.ToString();
+            SpecificGoal.Text = profileData.SpecificGoal;
+        }      
+    }
 }

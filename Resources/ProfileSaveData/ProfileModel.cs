@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPal.Resources.TempProfileSaveData
+namespace GymPal.Resources.ProfileSaveData
 {
     public class ProfileModel
     {

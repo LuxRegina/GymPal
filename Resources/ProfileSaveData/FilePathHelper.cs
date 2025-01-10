@@ -7,16 +7,18 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace GymPal.Resources.TempProfileSaveData
+namespace GymPal.Resources.ProfileSaveData
 {
-    public class FileHelper
+    public class FilePathHelper
     {
+        // Gets the correct filepath for the stored data.
         public static string GetFilePath(string fileName)
         {
-            string folderPath = FileSystem.AppDataDirectory;
+            string folderPath = FileSystem.AppDataDirectory; // AddDataDirectory isnt visible to user. But it exists or is created on first run.
             return Path.Combine(folderPath, fileName);
         }
 
+        // Saves the profile data.
         public static void SaveToJsonFile<ProfileModel>(ProfileModel data, string fileName)
         {
             string filePath = GetFilePath(fileName);
@@ -26,11 +28,6 @@ namespace GymPal.Resources.TempProfileSaveData
                 string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
                 streamWriter.Write(json);
             }
-
-
-            //string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
-            //File.WriteAllText(filePath, json);
-        }
-            
+        }            
     }
 }
