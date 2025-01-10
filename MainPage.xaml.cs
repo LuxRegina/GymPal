@@ -17,7 +17,8 @@ namespace GymPal
 
         private async void LogsBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LogsView()); 
+			var viewModel = new SharedViewModel();
+			await Navigation.PushAsync(new LogsView(viewModel)); 
         }
 
         private async void ProfileBtn_Clicked(object sender, EventArgs e)

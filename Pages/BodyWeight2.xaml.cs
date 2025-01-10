@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using GymPal.ViewModels;
 
 namespace GymPal.Pages;
 

@@ -1,3 +1,4 @@
+using GymPal.ViewModels;
 namespace GymPal.Pages;
 
 public partial class BodyWeight : ContentPage
@@ -14,7 +15,8 @@ public partial class BodyWeight : ContentPage
 
     private async void CoreProgram_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new BodyWeight2());
+		var viewModel = new SharedViewModel();
+		await Navigation.PushAsync(new BodyWeight2(viewModel));
         // TBD Show Exercises in Full body program and a button for start. (Starts timer)
     }
 
