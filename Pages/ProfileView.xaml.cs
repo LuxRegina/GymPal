@@ -11,4 +11,9 @@ public partial class ProfileView : ContentPage
 	{
 		await Navigation.PushAsync(new MainPage());
 	}
+
+    private void SaveBtn_Clicked(object sender, EventArgs e)
+    {
+		// TBD Save the info!
+    }
 }
