@@ -1,9 +1,12 @@
 ﻿using GymPal.Pages;
+using GymPal.Resources.TempProfileSaveData;
 
 namespace GymPal
 {
     public partial class MainPage : ContentPage
-    {        
+    {
+        public const string fileName = "ProfileData.json";
+
         public MainPage()
         {
             InitializeComponent();
@@ -21,6 +24,9 @@ namespace GymPal
 
         private async void ProfileBtn_Clicked(object sender, EventArgs e)
         {
+            ProfileView.LoadFromJsonFile<string>(fileName);
+            var profileView = new ProfileView();
+            profileView.LoadProfile();
             await Navigation.PushAsync(new ProfileView());
         }
         
