@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace GymPal.Resources.SavedData
 {
-    public class WorkoutData
+    public class WorkoutDataModel
     {
-       public List<Workout> workouts { get; set; }
+       public List<Workout>? workouts { get; set; }
     }
 
     public class Workout
     {
-        public string Name { get; set; }        // CustomGym
-        public string Duration { get; set; }    // 45 min
+        public string? Name { get; set; }        // CustomGym
+        public TimeSpan? Duration { get; set; }    // 45 min
         public DateTime Date { get; set; }      // 12/4/24
 
-        public List<Category> category { get; set; }    // Cardio, FreeWeight, BodyWeight
+        public List<Category>? category { get; set; }    // Cardio, FreeWeight, BodyWeight
     }
 
     public class Category
@@ -29,32 +29,36 @@ namespace GymPal.Resources.SavedData
 
     public class FreeWeight
     {
-        public string ExerciseName { get; set; }                // Benchpress
-        public List<FreeWeightInputData> FreeWeightInputData { get; set; }       
+        public List<FreeWeightInputData>? freeWeightInputData { get; set; }       
     }
     public class BodyWeight
     {
-        public string ExerciseName { get; set; }                // Sit-Ups
-        public List<BodyWeightInputData> BodyWeightInputData { get; set; }
+        public List<BodyWeightInputData>? bodyWeightInputData { get; set; }
     }
     public class Cardio
     {
-        public string ExerciseName { get; set; }                // Benchpress
-        public List<CardioInputData> CardioInputData { get; set; }
+        public List<CardioInputData>? cardioInputData { get; set; }
     }
 
 
 
     public class FreeWeightInputData
     {
+        public string? ExerciseName { get; set; }       // Benchpress
         public string? Notes { get; set; }   // I was in Spain        
         public int? Reps { get; set; }       // 15
         public int? Sets { get; set; }       // 3
         public int? Weight { get; set; }     // 20
+
+        public override string ToString()  // Makes the Debug.WriteLine Print out correctly for testing.
+        {
+            return $"Exercise: {ExerciseName}, Notes: {Notes}, Sets: {Sets}, Reps: {Reps}, Weight: {Weight}";
+        }
     }
 
     public class BodyWeightInputData
     {
+        public string? ExerciseName { get; set; }       // Sit-Ups
         public string? Notes { get; set; }   // I was in Spain        
         public int? Reps { get; set; }       // 15
         public int? Sets { get; set; }       // 3
@@ -62,6 +66,7 @@ namespace GymPal.Resources.SavedData
 
     public class CardioInputData
     {
+        public string? ExerciseName { get; set; }     // Benchpress
         public string? Notes { get; set; }           // I ran on the beach        
         public string? Distance { get; set; }       // 5 km
         public string? Location { get; set; }     // Spain
