@@ -1,10 +1,15 @@
 namespace GymPal.Pages;
+using GymPal.ViewModels;
 
 public partial class LogsView : ContentPage
 {
-	public LogsView()
+	private SharedViewModel _viewModel;
+	public LogsView(SharedViewModel viewModel)
 	{
 		InitializeComponent();
+		
+		_viewModel = viewModel;
+		BindingContext = _viewModel;
 	}
 
 	private async void HomeBtn_Clicked(object sender, EventArgs e)

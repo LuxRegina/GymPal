@@ -4,13 +4,16 @@ namespace GymPal.Pages;
 
 public partial class BodyWeight2 : ContentPage
 {
+	private SharedViewModel _viewModel;
 
-    private DateTime startTimer;
+	private DateTime startTimer;
     private DateTime stopTimer;
 
-    public BodyWeight2()
+    public BodyWeight2(SharedViewModel viewModel)
 	{
 		InitializeComponent();
+		_viewModel = viewModel;
+        BindingContext = _viewModel;
 	}
 
 	public async void HomeBtn_Clicked(object sender, EventArgs e)

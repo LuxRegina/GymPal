@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GymPal.Pages.LogsView">
+             x:Class="GymPal.Pages.LogsView"
+             Title="{Binding Title}">
 
     <Grid RowDefinitions="Auto, *, Auto">
         <!-- Header -->
@@ -27,6 +28,8 @@
 
         </Grid>
 
+       
+
         <!-- Skrollbar + Exempel -->
         <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
             <StackLayout Spacing="20">
@@ -43,8 +46,14 @@
                     <Label Text="2024-05-31" 
                            TextColor="#000000" FontSize="15" />
                 </Frame>
+
+                <StackLayout Padding="20">
+                    <Label Text="{Binding InputValue}" FontSize="24" />
+                </StackLayout>
             </StackLayout>
         </ScrollView>
+        
+        
 
         <!-- Bottenknapp -->
         <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
