@@ -59,13 +59,13 @@
             <!-- Goal Weight -->
             <HorizontalStackLayout HeightRequest="45" Spacing="20">
                 <Label Text="Goal Weight:" FontSize="25" Style="{StaticResource SubHeadline}" WidthRequest="160"/>
-                <Entry x:Name="Weight" Keyboard="Numeric" WidthRequest="100" Placeholder="85" HorizontalTextAlignment="Center" Style="{StaticResource SmallSublineText}" />
+                <Entry x:Name="GoalWeight" Keyboard="Numeric" WidthRequest="100" Placeholder="85" HorizontalTextAlignment="Center" Style="{StaticResource SmallSublineText}" />
                 <Label Text="Kg" FontSize="25" Style="{StaticResource SubHeadline}" WidthRequest="50"/>
             </HorizontalStackLayout>
             
             <!-- Specific Goal -->
             <Label Text="Specific Goal:" FontSize="25" Style="{StaticResource SubHeadline}" />
-            <Editor x:Name="ProfileName" WidthRequest="400" HeightRequest="100" Placeholder="I want to be able to do a Pull-Up." HorizontalOptions="Center" HorizontalTextAlignment="Start" Style="{StaticResource SmallSublineText}" />
+            <Editor x:Name="SpecificGoal" WidthRequest="400" HeightRequest="100" Placeholder="I want to be able to do a Pull-Up." HorizontalOptions="Center" HorizontalTextAlignment="Start" Style="{StaticResource SmallSublineText}" />
 
         </StackLayout>      
 
