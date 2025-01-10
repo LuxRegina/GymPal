@@ -4,7 +4,7 @@
              x:Class="GymPal.RunningView"
              Title="RunningView"
              BackgroundColor="Black">
-    <ScrollView>
+    
         <VerticalStackLayout Padding="10,0" Spacing="40">
 
             <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
@@ -28,7 +28,7 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"                    
                 SemanticProperties.Description="Runningview" />
-
+				
                 <!-- Rund bild -->
                 <Image Source="kondition.png"                   
                 HeightRequest="80"
@@ -39,20 +39,273 @@
                 SemanticProperties.Description="koniditionikon" />
 
             </Grid>
+            
+            
+        <!--NoneVisable Forms-->
 
-            <Grid WidthRequest="400" HeightRequest="400" HorizontalOptions="Center">
-            </Grid>
-            <Grid WidthRequest="400" HeightRequest="100" HorizontalOptions="Center">
-                <ImageButton 
-                Source="addworkout.png"
-                Background="Transparent"
-                HeightRequest="80"
-                WidthRequest="80"
-                Aspect="AspectFit"
-                HorizontalOptions="Center"
-                Clicked="AddWorkoutBtn_Clicked"
-                SemanticProperties.Description="testPicture" />
-            </Grid>
-        </VerticalStackLayout>
-    </ScrollView>
+        <!--Running Form Visable once Running is tapped-->
+        <Frame x:Name="RunForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+
+            <StackLayout>
+                <Grid WidthRequest="400" HeightRequest="55" Padding="7" Margin="5">
+                    <Label Text="Distance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Editor WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"></Editor>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="55" Padding="7" Margin="5">
+                    <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Editor WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"></Editor>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="55" Padding="7" Margin="5">
+                    <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Editor WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"></Editor>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="55" Padding="7" Margin="5">
+                    <Label Text="Location:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Editor WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"></Editor>
+                </Grid>
+                <Grid WidthRequest="400" Padding="10" Margin="15">
+                    <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                </Grid>
+            </StackLayout>
+        </Frame>
+
+        <!--Walking Form Visable once Walking is tapped-->
+        <Frame x:Name="WalkForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+            <StackLayout>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Distance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Loction:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" Padding="10" Margin="5">
+                    <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                </Grid>
+            </StackLayout>
+        </Frame>
+
+        <!--Swimming Form Visable once Swimming is tapped-->
+        <Frame x:Name="SwimForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+            <StackLayout>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Distance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Style:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" Padding="10" Margin="5">
+                    <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                </Grid>
+            </StackLayout>
+        </Frame>
+
+        <!--Cycling Form Visable once Cycling is tapped-->
+        <Frame x:Name="CycleForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+            <StackLayout>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Distance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Loction:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" Padding="10" Margin="5">
+                    <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                </Grid>
+            </StackLayout>
+        </Frame>
+
+        <!--Other Form Visable once Other is tapped-->
+        <Frame x:Name="OtherForm" HeightRequest="400" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
+            <StackLayout>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Type:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Time:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Note:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" HeightRequest="50" Padding="10" Margin="5">
+                    <Label Text="Intensity:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry WidthRequest="270" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <Grid WidthRequest="400" Padding="10" Margin="5">
+                    <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"></Button>
+                </Grid>
+            </StackLayout>
+        </Frame>
+            
+            
+            
+        <!--Tappable Frames-->
+            
+            <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
+                
+            <StackLayout x:Name="FrameStack" Spacing="20" IsVisible="True">
+                    <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                        <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                            <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                                <!-- Makes the grid clickable -->
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="RunningFrame_Tapped"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="180" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120" />
+                                </Grid.ColumnDefinitions>
+                                <!--Content of Grid below -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="Running" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="2" Grid.Column="2" Text="10 km" Style="{StaticResource SmallSublineText}" />
+                            </Grid>
+                        </Frame>
+                    </Frame>
+                    <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                        <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                                <!-- Makes the grid clickable -->
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="WalkingFrame_Tapped"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="180" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120" />
+                                </Grid.ColumnDefinitions>
+                                <!--Content of Grid below -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="Walking" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="30 min" Style="{StaticResource SmallSublineText}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="2" Grid.Column="2" Text="3 km" Style="{StaticResource SmallSublineText}" />
+                            </Grid>
+                        </Frame>
+                    </Frame>
+                    <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                        <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False">
+                                <!-- Makes the grid clickable -->
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Swimming_Tapped"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="180" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120" />
+                                </Grid.ColumnDefinitions>
+                                <!--Content of Grid below -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="Swimming" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="20 min" Style="{StaticResource SmallSublineText}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="2" Grid.Column="2" Text="500 m" Style="{StaticResource SmallSublineText}" />
+                            </Grid>
+                        </Frame>
+                    </Frame>
+                    <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                        <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False">
+                                <!-- Makes the grid clickable -->
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Cycling_Tapped"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="180" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120" />
+                                </Grid.ColumnDefinitions>
+                                <!--Content of Grid below -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="Cycling" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="2" Grid.Column="2" Text="20 km" Style="{StaticResource SmallSublineText}" />
+                            </Grid>
+                        </Frame>
+                    </Frame>
+
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False">
+                            <!-- Makes the grid clickable -->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="RunningFrame_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label Grid.Row="0" Grid.Column="0" Text="Other" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+            </StackLayout>
+            </ScrollView>
+           
+    </VerticalStackLayout>
+    
 </ContentPage>
