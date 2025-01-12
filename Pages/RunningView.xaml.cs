@@ -1,7 +1,10 @@
-namespace GymPal;
+using System.Diagnostics;
+
+namespace GymPal.Pages;
 
 public partial class RunningView : ContentPage
 {
+
 	public RunningView()
 	{
 		InitializeComponent();
@@ -12,38 +15,28 @@ public partial class RunningView : ContentPage
 		await Navigation.PushAsync(new MainPage());
 	}
 
-	private async void AddWorkoutBtn_Clicked(object sender, EventArgs e)
+	private async void RunningFrame_Tapped(object sender, TappedEventArgs e)
 	{
-		await Navigation.PushAsync(new AddRunningWorkout());
+		await Navigation.PushAsync(new RunningView2("Run"));
 	}
 
-	private void RunningFrame_Tapped(object sender, TappedEventArgs e)
+	private async void WalkingFrame_Tapped(object sender, TappedEventArgs e)
 	{
-		FrameStack.IsVisible = false;
-		RunForm.IsVisible = true;
+		await Navigation.PushAsync(new RunningView2("Walk"));
 	}
 
-	private void WalkingFrame_Tapped(object sender, TappedEventArgs e)
+	private async void Swimming_Tapped(object sender, TappedEventArgs e)
 	{
-		FrameStack.IsVisible = false;
-		WalkForm.IsVisible = true;
+		await Navigation.PushAsync(new RunningView2("Swim"));
 	}
 
-	private void Swimming_Tapped(object sender, TappedEventArgs e)
+	private async void Cycling_Tapped(object sender, TappedEventArgs e)
 	{
-		FrameStack.IsVisible = false;
-		SwimForm.IsVisible = true;
+		await Navigation.PushAsync(new RunningView2("Cycle"));
 	}
 
-	private void Cycling_Tapped(object sender, TappedEventArgs e)
+	private async void Other_Tapped(object sender, TappedEventArgs e)
 	{
-		FrameStack.IsVisible = false;
-		CycleForm.IsVisible = true;
-	}
-
-	private void Other_Tapped(object sender, TappedEventArgs e)
-	{
-		FrameStack.IsVisible = false;
-		OtherForm.IsVisible = true;
+		await Navigation.PushAsync(new RunningView2("Other"));
 	}
 }
