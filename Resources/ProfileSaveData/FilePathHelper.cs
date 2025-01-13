@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.IO;
+using Newtonsoft.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -23,11 +25,9 @@ namespace GymPal.Resources.ProfileSaveData
         {
             string filePath = GetFilePath(fileName);
 
-            using (var streamWriter = new StreamWriter(filePath, false))
-            {
-                string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
-                streamWriter.Write(json);
-            }
+            string json = JsonConvert.SerializeObject(data); 
+            File.WriteAllText(filePath,json);         
+
         }            
     }
 }
