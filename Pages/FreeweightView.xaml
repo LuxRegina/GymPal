@@ -75,7 +75,7 @@
 
                 <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="10" >
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True" >
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False" >
                             <!-- Makes the grid clickable -->
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="ArmDay_Tapped"/>
@@ -187,6 +187,7 @@
            Text="Add workout"         
            WidthRequest="250"
            HorizontalOptions="Center"
+           IsEnabled="False"
            SemanticProperties.Description="Add freeweight workout button."
            Clicked="AddBtn_Clicked" />
         

@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GymPal.Pages.BodyWeight2"
              BackgroundColor="{StaticResource Background}">
-
-    <VerticalStackLayout Padding="10,0" Spacing="20">
+    
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <VerticalStackLayout Padding="10,0" Spacing="20" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                
         <!-- Header -->
         <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
 
@@ -174,6 +176,14 @@
               HorizontalOptions="Center"
               SemanticProperties.Description="Start workout button."
               Clicked="StartBtn_Clicked" />
-        
-    </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+        <!-- Overlay when finished -->
+        <Grid x:Name="OverlayGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="450" HeightRequest="750"
+                BackgroundColor="Black" Opacity="0.8" IsVisible="False" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Label Text="Finished workout&#x0a;&#x0a;Good job!" FontSize="Header" VerticalTextAlignment="Center" Style="{StaticResource SubHeadline}"/>
+        </Grid>
+
+    </AbsoluteLayout>
 </ContentPage>

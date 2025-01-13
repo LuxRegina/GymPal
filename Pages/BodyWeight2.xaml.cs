@@ -46,19 +46,21 @@ public partial class BodyWeight2 : ContentPage
             TimeDisplay.Text = $"00:00";
             BackIcon.IsEnabled = true;
 
-            stopTimer = DateTime.Now;
+			stopTimer = DateTime.Now;
 
-            //Send this along with the other data to Logs!
-            TimeSpan workoutDuration = CountTime(startTimer, stopTimer);
+			//Send this along with the other data to Logs!
+			TimeSpan workoutDuration = CountTime(startTimer, stopTimer);
 
-            // TBD Save to Logs!!
+			// TBD Save to Logs!!
 
-            await Navigation.PushAsync(new MainPage());
-        }
+			OverlayGrid.IsVisible = true;
+			await Task.Delay(3000);
+			await Navigation.PushAsync(new MainPage());
+		}
     }
 
-    // Counts how long the workout lasted.
-    private static TimeSpan CountTime(DateTime startTimer, DateTime stopTimer)
+	// Counts how long the workout lasted.
+	private static TimeSpan CountTime(DateTime startTimer, DateTime stopTimer)
     {
         TimeSpan duration = stopTimer - startTimer;
         Debug.WriteLine($"Duration of workout: {duration}");
