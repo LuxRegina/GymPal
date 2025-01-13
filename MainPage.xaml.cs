@@ -1,9 +1,13 @@
 ﻿using GymPal.Pages;
+using GymPal.Resources.ProfileSaveData;
+using Microsoft.Maui.Controls.Internals;
 
 namespace GymPal
 {
     public partial class MainPage : ContentPage
-    {        
+    {
+        public const string fileName = "ProfileData.json";
+
         public MainPage()
         {
             InitializeComponent();
@@ -19,9 +23,18 @@ namespace GymPal
             await Navigation.PushAsync(new LogsView()); 
         }
 
+        // Makes sure the profile data is updated.
+        // Pushes user to ProfileView.
         private async void ProfileBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProfileView());
+            var profileView = new ProfileView();
+            var profileData = ProfileView.LoadFromJsonFile(fileName);
+
+            if (profileData != null)
+            {               
+                profileView.LoadProfile(profileData); 
+            }            
+            await Navigation.PushAsync(profileView);
         }
         
         private async void FreeweightBtn_Clicked(object sender, EventArgs e)
