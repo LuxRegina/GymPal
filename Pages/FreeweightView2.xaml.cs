@@ -47,6 +47,8 @@ public partial class FreeweightView2 : ContentPage
 			//Send this along with the other data to Logs!
 			TimeSpan workoutDuration = CountTime(startTimer, stopTimer);
 
+
+			Byt Branch och kopiera in CompileDataExercise!!
 			// TBD Save to Logs!!
 
 			OverlayGrid.IsVisible = true;

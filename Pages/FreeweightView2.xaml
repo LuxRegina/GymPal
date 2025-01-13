@@ -82,9 +82,9 @@
                                 <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
                                 <Editor x:Name="BenchPressNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
 
-                                <Entry Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
-                                <Entry Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />
-                                <Entry Grid.Row="2" Grid.Column="3" Placeholder="10" Style="{StaticResource SmallSublineText}" />
+                                <Entry x:Name="BPReps" Grid.Row="1" Grid.Column="1" Text="0" Style="{StaticResource SmallSublineText}" />
+                                <Entry x:Name="BPSets" Grid.Row="2" Grid.Column="2" Text="0" Style="{StaticResource SmallSublineText}" />
+                                <Entry x:Name="BPWeight" Grid.Row="2" Grid.Column="3" Text="0" Style="{StaticResource SmallSublineText}" />
                             </Grid>
                         </Frame>
                     </Frame>
