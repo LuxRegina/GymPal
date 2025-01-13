@@ -14,9 +14,12 @@ namespace GymPal
 
 			builder.Services.AddSingleton<MainPage>();
 			builder.Services.AddSingleton<LogsView>();
-			builder.Services.AddSingleton<BodyWeight2>();
-			
-			builder
+            builder.Services.AddSingleton<BodyWeight>();
+            builder.Services.AddSingleton<BodyWeight2>();
+            builder.Services.AddSingleton<FreeweightView>();
+            builder.Services.AddSingleton<FreeweightView2>();
+
+            builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
