@@ -5,17 +5,12 @@ namespace GymPal
 {
     public partial class App : Application
     {
-        public App()
+        public App(IServiceProvider serviceProvider)
         {
             InitializeComponent();
 
-			var services = new ServiceCollection();
-			services.AddSingleton<SharedViewModel>();
-			var provider = services.BuildServiceProvider();
-
 			//MainPage = new AppShell();
 			MainPage = new NavigationPage(new MainPage());
-			DependencyService.RegisterSingleton(provider.GetService<SharedViewModel>());
 		}
 
 

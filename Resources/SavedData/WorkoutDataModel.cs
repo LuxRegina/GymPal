@@ -50,6 +50,15 @@ namespace GymPal.Resources.SavedData
         public int? Sets { get; set; }       // 3
         public int? Weight { get; set; }     // 20
 
+        public FreeWeightInputData(string exerciseName, string notes, int reps, int sets, int weight) 
+        {
+            ExerciseName = exerciseName;
+            Notes = notes;
+            Reps = reps;
+            Sets = sets;
+            Weight = weight;
+		}
+
         public override string ToString()  // Makes the Debug.WriteLine Print out correctly for testing.
         {
             return $"Exercise: {ExerciseName}, Notes: {Notes}, Sets: {Sets}, Reps: {Reps}, Weight: {Weight}";

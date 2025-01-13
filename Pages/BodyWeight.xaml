@@ -187,7 +187,6 @@
            Text="Add workout"         
            WidthRequest="250"
            HorizontalOptions="Center"
-           IsEnabled="False"
            SemanticProperties.Description="Add bodyweight workout button."
            Clicked="AddBtn_Clicked" />
 

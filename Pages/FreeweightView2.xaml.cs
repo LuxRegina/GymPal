@@ -1,5 +1,6 @@
 using GymPal.Resources.SavedData;
 using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace GymPal.Pages;
 
@@ -8,10 +9,32 @@ public partial class FreeweightView2 : ContentPage
     private DateTime startTimer;
 	private DateTime stopTimer;
 
-	public List<FreeWeightInputData> InputData { get; set; } 
-	
+	private string notes; // field
+	private int reps;
+	private int sets;
+	private int weight;
+	public string Notes
+	{
+		set { notes = value; }
+	}
+	public int Reps
+	{
+		set { reps = value; }
+	}
+	public int Sets
+	{
+		set { sets = value; }
+	}
+	public int Weight
+	{
+		set { weight = value; }
+	}
+	//public List<FreeWeightInputData> InputData { get; set; }
+	public List<FreeWeightInputData> InputData = new List<FreeWeightInputData>();
+	 
 
-    public FreeweightView2()
+
+public FreeweightView2()
 	{
 		InitializeComponent();
 	}
@@ -79,7 +102,24 @@ public partial class FreeweightView2 : ContentPage
 		int sets = Int32.Parse(SetsNotes1.Text);
 		int weight = Int32.Parse(WeightNotes1.Text);
 
-		var newExercise = new FreeWeightInputData
+		if (notes.Length > 0) 
+		{
+			notes = "Notes";
+		}
+		if (reps == null)
+		{
+			reps = 0;
+		}
+		if (sets == null)
+		{
+			sets = 0;
+		}
+		if (weight == null)
+		{
+			weight = 0;
+		}
+		/*var newExercise = new FreeWeightInputData
+		new FreeWeightInputData(string exerciseName, string notes, int reps, int sets, int weight)
 		{
 			ExerciseName = exerciseName,
 			Notes = notes,
@@ -87,7 +127,8 @@ public partial class FreeweightView2 : ContentPage
 			Sets = sets,
 			Weight = weight
 		};
-        InputData.Add(newExercise);
+		*/
+        InputData.Add(new FreeWeightInputData(exerciseName,	notes, reps, sets, weight));
 
 		
 		foreach(var data in InputData)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Diagnostics;
 
 namespace GymPal.ViewModels
 {
@@ -21,6 +22,7 @@ namespace GymPal.ViewModels
 				{
 					_inputValue = value;
 					OnPropertyChanged();
+					Debug.WriteLine(_inputValue);
 				}
 			}
 		}

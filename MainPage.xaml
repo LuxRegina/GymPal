@@ -77,7 +77,6 @@
                     Aspect="AspectFit"
                     HorizontalOptions="End"
                     VerticalOptions="End"
-                    IsEnabled="False"
                     SemanticProperties.Description="Add custom workout button"
                     Clicked="CustomBtn_Clicked"/>
 
