@@ -47,10 +47,7 @@ public partial class FreeweightView2 : ContentPage
 			//Send this along with the other data to Logs!
 			TimeSpan workoutDuration = CountTime(startTimer, stopTimer);
 
-
-			Byt Branch och kopiera in CompileDataExercise!!
-			// TBD Save to Logs!!
-
+			
 			OverlayGrid.IsVisible = true;
 			await Task.Delay(3000);
 			await Navigation.PushAsync(new MainPage());
@@ -64,5 +61,61 @@ public partial class FreeweightView2 : ContentPage
         Debug.WriteLine($"Duration of workout: {duration}");  
 		
 		return duration;		
+    }
+
+    private void CompileExerciseData()
+    {
+        string exerciseName = ExerciseName.Text;
+        string notes = Notes1.Text;
+
+        string textReps = RepsNotes1.Text;
+        int reps;
+        if (int.TryParse(textReps, out int resultReps))
+        {
+            reps = resultReps;
+        }
+        else { reps = 0; }
+
+        string textSets = SetsNotes1.Text;
+        int sets;
+        if (int.TryParse(textSets, out int resultSets))
+        {
+            sets = resultSets;
+        }
+        else { sets = 0; }
+
+        string textWeight = WeightNotes1.Text;
+        int weight;
+        if (int.TryParse(textWeight, out int resultWeight))
+        {
+            weight = resultWeight;
+        }
+        else { weight = 0; }
+
+
+        if (notes == "")
+        {
+            notes = "Notes";
+        }
+     
+        /*var newExercise = new FreeWeightInputData
+		new FreeWeightInputData(string exerciseName, string notes, int reps, int sets, int weight)
+		{
+			ExerciseName = exerciseName,
+			Notes = notes,
+			Reps = reps,
+			Sets = sets,
+			Weight = weight
+		};
+		*/
+        InputData.Add(new FreeWeightInputData(exerciseName, notes, reps, sets, weight));
+
+
+        foreach (var data in InputData)
+        {
+            Debug.WriteLine(data);
+        }
+
+
     }
 }
