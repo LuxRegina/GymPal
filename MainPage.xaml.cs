@@ -1,6 +1,8 @@
 ﻿using GymPal.Pages;
 using GymPal.Resources.ProfileSaveData;
 using Microsoft.Maui.Controls.Internals;
+//using static CoreFoundation.DispatchSource;
+using System.Text.Json;
 
 namespace GymPal
 {
@@ -28,7 +30,15 @@ namespace GymPal
         private async void ProfileBtn_Clicked(object sender, EventArgs e)
         {
             var profileView = new ProfileView();
-            var profileData = ProfileView.LoadFromJsonFile(fileName);
+            if (fileName == null)
+                {
+				//skapa filen profiledata.json
+				using (StreamWriter writer = new StreamWriter(fileName))
+				{
+					writer.Write("{}");
+				}
+			}
+			var profileData = ProfileView.LoadFromJsonFile(fileName);
 
             if (profileData != null)
             {               

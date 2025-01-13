@@ -45,6 +45,7 @@ public partial class ProfileView : ContentPage
     public static ProfileModel LoadFromJsonFile(string fileName)
     {
         string filePath = FilePathHelper.GetFilePath(fileName);
+
         string jsonFile = ReadFile(filePath);
         ProfileModel? profile = JsonConvert.DeserializeObject<ProfileModel>(jsonFile);
         
