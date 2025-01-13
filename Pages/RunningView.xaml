@@ -74,7 +74,7 @@
                 </Frame>
                 <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False">
                             <!-- Makes the grid clickable -->
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="WalkingFrame_Tapped"/>
@@ -99,7 +99,7 @@
                 </Frame>
                 <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False">
                             <!-- Makes the grid clickable -->
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="Swimming_Tapped"/>
@@ -124,7 +124,7 @@
                 </Frame>
                 <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False">
                             <!-- Makes the grid clickable -->
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="Cycling_Tapped"/>
@@ -149,7 +149,7 @@
                 </Frame>
                 <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False">
                             <!-- Makes the grid clickable -->
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="Other_Tapped"/>

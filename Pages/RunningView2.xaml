@@ -18,6 +18,7 @@
                   HeightRequest="80"
                   WidthRequest="80"
                   Aspect="AspectFit"
+                  IsEnabled="True"
                   HorizontalOptions="Start"
                   VerticalOptions="Start"
                   SemanticProperties.Description="Manage home button." 
@@ -25,20 +26,20 @@
 
                 <!-- Titel -->
                 <Label 
-                Text="Workouts"
-                Style="{StaticResource SubHeadline}"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"                    
-                SemanticProperties.Description="Core workout title" />
+                    Text="Running"
+                    Style="{StaticResource SubHeadline}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"                    
+                    SemanticProperties.Description="Running workout title" />
 
                 <!-- Rund bild -->
                 <Image Source="kondition.png"                   
-              HeightRequest="80"
-              WidthRequest="80"
-              Aspect="AspectFit"
-              HorizontalOptions="End"
-              VerticalOptions="Center"
-              SemanticProperties.Description="kondition icon" />
+                      HeightRequest="80"
+                      WidthRequest="80"
+                      Aspect="AspectFit"
+                      HorizontalOptions="End"
+                      VerticalOptions="Center"
+                      SemanticProperties.Description="kondition icon" />
 
                 <Line X1="0" Y1="0" X2="500" Y2="0" 
                    Stroke="{StaticResource SecondaryGreen}"
@@ -51,7 +52,7 @@
                 <StackLayout x:Name="FrameStack" Spacing="20" IsVisible="True">
 
                     <!-- Timer -->
-                    <Grid x:Name="TimerGrid" HeightRequest="60" BackgroundColor="Transparent" IsVisible="True">
+                    <Grid x:Name="TimerGrid" HeightRequest="60" BackgroundColor="Transparent" IsVisible="False">
                         <HorizontalStackLayout>
                             <Label Text="Start Time:" WidthRequest="250" Style="{StaticResource SubHeadline}"/>
                             <Border WidthRequest="150" VerticalOptions="Center">
@@ -64,25 +65,30 @@
                     <Frame x:Name="RunForm" HeightRequest="350" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
                         <StackLayout>
                             <Label Text="Running" FontSize="Small" HorizontalOptions="Center" />
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Distance:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
+                            
+                            <!-- Distance -->
+                            <HorizontalStackLayout WidthRequest="400" HorizontalOptions="Center" HeightRequest="50" Padding="5" Margin="5" Spacing="15" >
+                                <Label Text="Distance:" HorizontalTextAlignment="Start" Style="{StaticResource SmallSublineText}"/>
+                                <Editor WidthRequest="250" HorizontalTextAlignment="Center" MaxLength="6" Style="{StaticResource SmallSublineText}"/>
+                            </HorizontalStackLayout>
+                            
+                            <!-- Time -->
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
                                 <Label Text="Time:" FontSize="Small" HorizontalTextAlignment="Start"/>
                                 <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
+                            </HorizontalStackLayout>
+                            
+                            <!-- Note -->
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
                                 <Label Text="Note:" FontSize="Small" HorizontalTextAlignment="Start"/>
                                 <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
+                            </HorizontalStackLayout>
+                            
+                            <!-- Location -->
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
                                 <Label Text="Location:" FontSize="Small" HorizontalTextAlignment="Start"/>
                                 <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" Padding="5" Margin="5">
-                                <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"/>
-                            </Grid>
+                            </HorizontalStackLayout>
                         </StackLayout>
                     </Frame>
 
