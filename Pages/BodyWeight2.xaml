@@ -53,11 +53,10 @@
                 <Grid x:Name="TimerGrid" HeightRequest="60" BackgroundColor="Transparent" IsVisible="False">
                     <HorizontalStackLayout>
                         <Label Text="Start Time:" WidthRequest="250" Style="{StaticResource SubHeadline}"/>
-                        <Border WidthRequest="150" VerticalOptions="Center">
-                            <Label x:Name="TimeDisplay" Text="00:00" Style="{StaticResource SubHeadline}"/>
-                        </Border>
-
-                    </HorizontalStackLayout>
+                            <Border WidthRequest="150" VerticalOptions="Center">
+                                <Label x:Name="TimeDisplay" Text="00:00" Style="{StaticResource SubHeadline}"/>
+                            </Border>
+                        </HorizontalStackLayout>
                 </Grid>
                 
                 <!-- Exercise boxes below -->
@@ -136,31 +135,29 @@
                     </Frame>
                 </Frame>
 
-                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
-                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" ColumnSpacing="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="45"/>
-                                <RowDefinition Height="65"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="220" />
-                                <ColumnDefinition Width="100" />
-                                <ColumnDefinition Width="80" />
-                            </Grid.ColumnDefinitions>
-                            <!--Content of Grid below -->
-                            <Label Grid.Row="0" Grid.Column="0" Text="Bird Dog" MaxLines="1" Style="{StaticResource SmallHeadlineText}"/>
-                            <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
-                            <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
+                    <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                        <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
+                            <Grid BackgroundColor="{StaticResource ThirdGreen}" ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="45"/>
+                                    <RowDefinition Height="65"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="220" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="80" />
+                                </Grid.ColumnDefinitions>
+                                <!--Content of Grid below -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="Bird Dog" MaxLines="1" Style="{StaticResource SmallHeadlineText}"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}" />
 
-                            <Editor x:Name="BirdDogBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
-                            <Entry Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-                            <Entry Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
-
-                        </Grid>
+                                <Editor x:Name="BirdDogBWNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="160" Style="{StaticResource NotesText}" />
+                                <Entry Grid.Row="1" Grid.Column="1" Placeholder="15" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                                <Entry Grid.Row="1" Grid.Column="2" Placeholder="3" MaxLength="3" Style="{StaticResource SmallSublineText}" />
+                            </Grid>
+                        </Frame>
                     </Frame>
-                </Frame>
-
             </StackLayout>
         </ScrollView>
 
