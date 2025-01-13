@@ -1,20 +1,26 @@
 namespace GymPal.Pages;
+using GymPal.ViewModels;
+using System.Diagnostics;
 
 public partial class FreeweightView : ContentPage
 {
-	public FreeweightView()
+	private SharedViewModel _viewModel;
+	public FreeweightView(SharedViewModel viewModel)
 	{
 		InitializeComponent();
+		_viewModel = viewModel;
+		BindingContext = _viewModel;
+		
 	}
 
 	private async void HomeBtn_Clicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new MainPage());
+		await Navigation.PushAsync(new MainPage(_viewModel));
 	}
 
 	private async void FullBodyProgram_Tapped(object sender, TappedEventArgs e)
 	{
-		await Navigation.PushAsync(new FreeweightView2());
+		await Navigation.PushAsync(new FreeweightView2(_viewModel));
 		// TBD Show Exercises in Full body program and a button for start. (Starts timer)
 	}
 

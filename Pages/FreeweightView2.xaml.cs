@@ -1,6 +1,7 @@
 using GymPal.Resources.SavedData;
 using System.Diagnostics;
 using System.Xml.Linq;
+using GymPal.ViewModels;
 
 namespace GymPal.Pages;
 
@@ -31,17 +32,20 @@ public partial class FreeweightView2 : ContentPage
 	}
 	//public List<FreeWeightInputData> InputData { get; set; }
 	public List<FreeWeightInputData> InputData = new List<FreeWeightInputData>();
-	 
 
+	private SharedViewModel _viewModel;
 
-public FreeweightView2()
+	public FreeweightView2(SharedViewModel viewModel)
 	{
 		InitializeComponent();
+
+		_viewModel = viewModel;
+		BindingContext = _viewModel;
 	}
 
 	public async void HomeBtn_Clicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new FreeweightView());
+		await Navigation.PushAsync(new FreeweightView(_viewModel));
 	}
 
 	// Changes text in StartBtn
@@ -77,10 +81,11 @@ public FreeweightView2()
 
 			CompileExerciseData();
 
+			Debug.WriteLine($"{Notes1.Text}");
 
 			OverlayGrid.IsVisible = true;
 			await Task.Delay(3000);
-			await Navigation.PushAsync(new MainPage());
+			await Navigation.PushAsync(new MainPage(_viewModel));
 		}
     }
 
@@ -94,19 +99,42 @@ public FreeweightView2()
 		return duration;		
     }
 
+	//Databinding inputValue ska in här nånstans.
     private void CompileExerciseData()
     {
 		string exerciseName = ExerciseName.Text;
-		string notes = BenchPressNotes.Text;
-		int reps = Int32.Parse(RepsNotes1.Text);
-		int sets = Int32.Parse(SetsNotes1.Text);
-		int weight = Int32.Parse(WeightNotes1.Text);
+		string notes = Notes1.Text;
 
-		if (notes.Length > 0) 
+		string textReps = RepsNotes1.Text;
+		int reps;
+		if (int.TryParse(textReps, out int resultReps))
+		{
+			reps = resultReps;
+		}
+		else { reps = 0; }
+
+		string textSets = SetsNotes1.Text;
+		int sets;
+		if (int.TryParse(textSets, out int resultSets))
+		{
+			sets = resultSets;
+		}
+		else { sets = 0; }
+
+		string textWeight = WeightNotes1.Text;
+		int weight;
+		if (int.TryParse(textWeight, out int resultWeight))
+		{
+			weight = resultWeight;
+		}
+		else { weight = 0; }
+
+
+		if (notes == "") 
 		{
 			notes = "Notes";
 		}
-		if (reps == null)
+		/*if (reps == null)
 		{
 			reps = 0;
 		}
@@ -118,6 +146,7 @@ public FreeweightView2()
 		{
 			weight = 0;
 		}
+		*/
 		/*var newExercise = new FreeWeightInputData
 		new FreeWeightInputData(string exerciseName, string notes, int reps, int sets, int weight)
 		{

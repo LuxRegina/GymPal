@@ -9,7 +9,7 @@ public partial class ProfileView : ContentPage
 
 	private async void HomeBtn_Clicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new MainPage());
+		//await Navigation.PushAsync(new MainPage());
 	}
 
     private void SaveBtn_Clicked(object sender, EventArgs e)

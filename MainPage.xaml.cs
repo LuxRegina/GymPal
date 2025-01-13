@@ -1,14 +1,18 @@
 ﻿using GymPal.Pages;
 using GymPal.ViewModels;
+using System.Diagnostics;
 
 namespace GymPal
 {
     public partial class MainPage : ContentPage
-    {        
-        public MainPage()
+    {
+		private SharedViewModel _viewModel;
+		public MainPage(SharedViewModel viewModel)
         {
             InitializeComponent();
-        }
+			_viewModel = viewModel;
+			BindingContext = _viewModel;
+		}
 
         private async void RunningButton_Clicked(object sender, EventArgs e)
         {
@@ -17,8 +21,7 @@ namespace GymPal
 
         private async void LogsBtn_Clicked(object sender, EventArgs e)
         {
-			var viewModel = new SharedViewModel();
-			await Navigation.PushAsync(new LogsView(viewModel)); 
+			await Navigation.PushAsync(new LogsView(_viewModel)); 
         }
 
         private async void ProfileBtn_Clicked(object sender, EventArgs e)
@@ -28,7 +31,7 @@ namespace GymPal
         
         private async void FreeweightBtn_Clicked(object sender, EventArgs e)
         {
-			await Navigation.PushAsync(new FreeweightView());
+			await Navigation.PushAsync(new FreeweightView(_viewModel));
 		}
 
         private async void BodyweightBtn_Clicked(object sender, EventArgs e)

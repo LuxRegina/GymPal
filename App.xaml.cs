@@ -5,12 +5,13 @@ namespace GymPal
 {
     public partial class App : Application
     {
+        private SharedViewModel _viewModel;
         public App(IServiceProvider serviceProvider)
         {
             InitializeComponent();
 
 			//MainPage = new AppShell();
-			MainPage = new NavigationPage(new MainPage());
+			MainPage = new NavigationPage(new MainPage(_viewModel));
 		}
 
 

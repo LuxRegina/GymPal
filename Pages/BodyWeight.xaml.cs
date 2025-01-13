@@ -10,7 +10,7 @@ public partial class BodyWeight : ContentPage
 	
 	private async void HomeBtn_Clicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new MainPage());
+		//await Navigation.PushAsync(new MainPage());
 	}
 
     private async void CoreProgram_Tapped(object sender, TappedEventArgs e)

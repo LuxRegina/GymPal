@@ -1,5 +1,6 @@
 namespace GymPal.Pages;
 using GymPal.ViewModels;
+using System.Diagnostics;
 
 public partial class LogsView : ContentPage
 {
@@ -10,10 +11,11 @@ public partial class LogsView : ContentPage
 		
 		_viewModel = viewModel;
 		BindingContext = _viewModel;
+		
 	}
 
 	private async void HomeBtn_Clicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new MainPage());
+		await Navigation.PushAsync(new MainPage(_viewModel));
 	}
 }

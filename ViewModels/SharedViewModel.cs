@@ -22,7 +22,7 @@ namespace GymPal.ViewModels
 				{
 					_inputValue = value;
 					OnPropertyChanged();
-					Debug.WriteLine(_inputValue);
+					Debug.WriteLine(InputValue);
 				}
 			}
 		}

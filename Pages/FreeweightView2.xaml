@@ -79,7 +79,7 @@
                                     <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
                                     <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}"/>
                                     <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
-                                    <Editor x:Name="BenchPressNotes" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" />
+                                <Editor x:Name="Notes1" Grid.Row="1" Grid.Column="0" Placeholder="Notes" WidthRequest="150" Style="{StaticResource NotesText}" Text="{Binding Inputvalue}" />
 
                                 <Entry x:Name="RepsNotes1" Grid.Row="1" Grid.Column="1" Placeholder="15" Style="{StaticResource SmallSublineText}" />
                                 <Entry x:Name="SetsNotes1" Grid.Row="2" Grid.Column="2" Placeholder="3" Style="{StaticResource SmallSublineText}" />

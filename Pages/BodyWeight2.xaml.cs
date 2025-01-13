@@ -55,7 +55,7 @@ public partial class BodyWeight2 : ContentPage
 
 			OverlayGrid.IsVisible = true;
 			await Task.Delay(3000);
-			await Navigation.PushAsync(new MainPage());
+			//await Navigation.PushAsync(new MainPage());
 		}
     }
 
