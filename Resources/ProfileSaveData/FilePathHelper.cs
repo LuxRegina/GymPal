@@ -14,15 +14,19 @@ namespace GymPal.Resources.ProfileSaveData
         // Gets the correct filepath for the stored data.
         public static string GetFilePath(string fileName)
         {
-            string folderPath = FileSystem.AppDataDirectory; // AddDataDirectory isnt visible to user. But it exists or is created on first run.
-            return Path.Combine(folderPath, fileName);
-        }
+			string folderPath = FileSystem.AppDataDirectory;
+            Debug.WriteLine($"sökväg folderpath: {folderPath}");
+			Debug.WriteLine($"sökväg filename: {fileName}");
+			// Create the folder if it doesn't exist
+
+			return Path.Combine(folderPath, fileName);
+		}
 
         // Saves the profile data.
         public static void SaveToJsonFile<ProfileModel>(ProfileModel data, string fileName)
         {
             string filePath = GetFilePath(fileName);
-
+            Debug.WriteLine($"sökväg: {filePath}");
             using (var streamWriter = new StreamWriter(filePath, false))
             {
                 string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
