@@ -31,14 +31,10 @@ namespace GymPal
             var profileData = ProfileView.LoadFromJsonFile(fileName);
 
             if (profileData != null)
-            {
-                profileView.LoadProfile(profileData);
-                await Navigation.PushAsync(profileView);
-            }
-            else
-            {
-                await Navigation.PushAsync(new ProfileView());
-            }
+            {               
+                profileView.LoadProfile(profileData); 
+            }            
+            await Navigation.PushAsync(profileView);
         }
         
         private async void FreeweightBtn_Clicked(object sender, EventArgs e)
