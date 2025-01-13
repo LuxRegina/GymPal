@@ -9,8 +9,8 @@ namespace GymPal.Resources.ProfileSaveData
     public class ProfileModel
     {
         public string? Name { get; set; }
-        public int Weight { get; set; }
-        public int GoalWeight { get; set; }
+        public int? Weight { get; set; }
+        public int? GoalWeight { get; set; }
         public string? SpecificGoal { get; set; }
 
     }
