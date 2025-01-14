@@ -5,8 +5,6 @@ using Microsoft.Maui.Controls.Internals;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-
-//using static CoreFoundation.DispatchSource;
 using System.Text.Json;
 
 namespace GymPal

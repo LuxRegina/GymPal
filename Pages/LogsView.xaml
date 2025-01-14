@@ -30,7 +30,6 @@
                     Stroke="{StaticResource SecondaryGreen}"
                     VerticalOptions="End" />
 
-
         </Grid>
         
         
@@ -42,7 +41,7 @@
                         <Grid BackgroundColor="{StaticResource ThirdGreen}" >
                                 <!--Makes the grid clickable--> 
                             <Grid.GestureRecognizers>
-                                <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
+                                <TapGestureRecognizer Tapped="Program1_Tapped"/>
                             </Grid.GestureRecognizers>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -70,10 +69,10 @@
 
                 <Frame x:Name="Frame1" IsVisible="False"  Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="False">
                             <!--Makes the grid clickable-->
                             <Grid.GestureRecognizers>
-                                <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
+                                <!--<TapGestureRecognizer Tapped="Program2_Tapped"/>-->
                             </Grid.GestureRecognizers>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>

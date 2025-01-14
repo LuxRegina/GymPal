@@ -94,6 +94,9 @@
 	  <MauiXaml Update="Pages\FreeweightView2.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\LogsView2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\RunningView2.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
