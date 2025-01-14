@@ -123,9 +123,6 @@ public partial class LogsView2 : ContentPage
         DLSets = workoutData[0].exercise[5].Sets;
         DLWeight = workoutData[0].exercise[5].Weight;
 
-
-
-
         //for (int j = 0; j < workoutData[0].exercise.Count; j++) // Loop to print all.
         //{
 

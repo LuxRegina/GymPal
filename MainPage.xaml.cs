@@ -84,9 +84,8 @@ namespace GymPal
 
         public static List<ProgramModel> LoadProgramFromJsonFile(string fileName2)
         {
-
             string filePath = FilePathHelper.GetFilePath(fileName2);
-
+               
             string jsonFile = ReadFile(filePath);
             List<ProgramModel>? workouts = JsonConvert.DeserializeObject<List<ProgramModel>>(jsonFile);
 
