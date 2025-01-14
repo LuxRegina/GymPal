@@ -13,11 +13,8 @@ namespace GymPal
 {
     public partial class MainPage : ContentPage
     {
-        public static ObservableCollection<ProgramModel> ExerciseList = new ObservableCollection<ProgramModel>();
-        //public static List<ProgramModel> ExerciseList = new List<ProgramModel>();
-        //public static List<AllLists> Lists = new List<AllLists>();
-
-
+        public static List<ProgramModel> ExerciseList = new List<ProgramModel>();
+    
         public MainPage()
         {
             InitializeComponent();
@@ -44,8 +41,7 @@ namespace GymPal
 
             if (logsData != null)
             {
-                //Debug.WriteLine(logsData.Count);
-                logsView.LoadLogs(logsData);
+                await Navigation.PushAsync(new LogsView());
             }
             await Navigation.PushAsync(logsView);
                         
@@ -88,14 +84,14 @@ namespace GymPal
              await Navigation.PushAsync(new Custom());
         }
 
-        public static ObservableCollection<ProgramModel> LoadProgramFromJsonFile(string fileName2)
+        public static List<ProgramModel> LoadProgramFromJsonFile(string fileName2)
         {
 
             string filePath = FilePathHelper.GetFilePath(fileName2);
 
             string jsonFile = ReadFile(filePath);
-            ObservableCollection<ProgramModel>? workouts = JsonConvert.DeserializeObject<ObservableCollection<ProgramModel>>(jsonFile);
-            Debug.WriteLine(workouts);
+            List<ProgramModel>? workouts = JsonConvert.DeserializeObject<List<ProgramModel>>(jsonFile);
+
             return workouts;
         }
 

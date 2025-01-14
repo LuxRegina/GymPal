@@ -10,15 +10,17 @@ namespace GymPal.Resources.SaveToLogs
     public class ProgramModel
     {
         public string? Name { get; set; }        // CustomGym
-        public TimeSpan? Duration { get; set; }    // 45 min
+        public string? Duration { get; set; }    // 45 min
         public DateTime Date { get; set; }      // 12/4/24
         public string Category { get; set; }    // FreeWeight, Cardio, BodyWeight
-
-        //public List<AllLists>? exercises { get; set; }    // Exercises from all 
+               
         public List<FreeWeightModel>? exercise { get; set; }
 
 
-
+        public override string ToString()
+        {
+            return $"Name: {Name}, Duration: {Duration}, Date: {Date}, Category: {Category}";
+        }
 
 
 

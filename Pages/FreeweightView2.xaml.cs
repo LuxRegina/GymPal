@@ -11,7 +11,7 @@ public partial class FreeweightView2 : ContentPage
     private DateTime startTimer;
 	private DateTime stopTimer;
     private string workoutName;
-    public TimeSpan workoutDuration;
+    public string workoutDuration;
     private DateTime date;
     private string category = "Free Weight";
       
@@ -63,12 +63,20 @@ public partial class FreeweightView2 : ContentPage
     }
 
 	// Counts how long the workout lasted.
-    private static TimeSpan CountTime(DateTime startTimer, DateTime stopTimer)
+    private static string CountTime(DateTime startTimer, DateTime stopTimer)
     {
         TimeSpan duration = stopTimer - startTimer;
-        Debug.WriteLine($"Duration of workout: {duration}");  
+        int hour = duration.Hours;
+        int minutes = duration.Minutes;
+        int seconds = duration.Seconds;
+        Debug.WriteLine(hour);
+        Debug.WriteLine(minutes);
+        Debug.WriteLine(seconds);
+        Debug.WriteLine($"Duration of workout: {duration}");
+
+        string time = $"{hour}:{minutes}";
 		
-		return duration;		
+		return time;		
     }
 
     //Saves all input from user to a list called ExerciseList.
