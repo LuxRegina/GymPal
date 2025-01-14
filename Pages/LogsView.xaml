@@ -34,16 +34,7 @@
         </Grid>
         
         
-
-        <!--<Grid WidthRequest="250" HeightRequest="250">
-            <Label x:Name="Test" WidthRequest="100" HeightRequest="100" Style="{StaticResource SubHeadline}">Hej
-                
-            </Label>
-        </Grid>-->
-
-        <!--BindableLayout.ItemsSource="{Binding ExerciseList}"-->
-        
-        <!-- Skrollbar + Exempel -->
+        <!-- Skrollbar -->
         <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
             <StackLayout Spacing="20">           
                 <Frame x:Name="Frame0" IsVisible="False" Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">

@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Text.Json;
 using System.Collections.ObjectModel;
 using GymPal.ViewModels;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace GymPal.Pages;
 
@@ -46,6 +45,7 @@ public partial class LogsView : ContentPage
 		await Navigation.PushAsync(new MainPage());
 	}
 
+    // Update the UI from the last saved ExerciseList.
     public void LoadDataFromJson(string fileName2)
     {
         var workoutData = MainPage.LoadProgramFromJsonFile(fileName2);

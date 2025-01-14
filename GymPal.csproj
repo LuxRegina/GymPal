@@ -57,6 +57,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="FreeWeightInputData.cs" />
+	  <Compile Remove="Resources\SaveToLogs\AllLists.cs" />
 	  <Compile Remove="Resources\SaveToLogs\SaveToLogsModel.cs" />
 	</ItemGroup>
 
