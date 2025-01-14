@@ -44,67 +44,169 @@
         <!-- Skrollbar -->
         <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
             <StackLayout Spacing="20">
-                <Frame x:Name="Frame0" IsVisible="False" Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
-                    <Frame x:Name="Test" BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" >
-                            <!--Makes the grid clickable-->
-                            <Grid.GestureRecognizers>
-                                <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
-                            </Grid.GestureRecognizers>
+                <!-- Exercise Boxes -->
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" ColumnSpacing="10">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="45"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="150" />
-                                <ColumnDefinition Width="120" />
-                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
                             </Grid.ColumnDefinitions>
-                            <!--Content of Grid below-->
-                            <Label x:Name="NameExercise" Grid.Row="0" Grid.Column="0" Text="{Binding workoutName}" Style="{StaticResource SmallHeadlineText}"/>
+                            <!--Content of Grid below -->
+                            <Label x:Name="BenchPress"  Grid.Row="0" Grid.Column="0" Text="Bench Press" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="BenchPressNotes" Grid.Row="1" Grid.Column="0" Text="Notes" WidthRequest="150" Style="{StaticResource NotesText}" IsReadOnly="True"/>
 
-                            <Label Grid.Row="0" Grid.Column="1" Text="Duration:" Style="{StaticResource SmallHeadlineText}" />
-                            <Label x:Name="DurationExercise" Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
-
-                            <Label Grid.Row="0" Grid.Column="2" Text="Date:" Style="{StaticResource SmallHeadlineText}"/>
-                            <Label x:Name="DateExercise" Grid.Row="2" Grid.Column="2" Text="Date" Style="{StaticResource SmallSublineText}" />
-
-                            <Label x:Name="CategoryExercise" Grid.Row="1" Grid.Column="0" Text="Category" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="BPReps" Grid.Row="1" Grid.Column="1" Text="0" Style="{StaticResource SmallSublineText}"  />
+                            <Label x:Name="BPSets" Grid.Row="2" Grid.Column="2" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="BPWeight" Grid.Row="2" Grid.Column="3" Text="0" Style="{StaticResource SmallSublineText}"  />
                         </Grid>
-
                     </Frame>
                 </Frame>
 
-                <Frame x:Name="Frame1" IsVisible="False"  Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
-                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}">
-                            <!--Makes the grid clickable-->
-                            <Grid.GestureRecognizers>
-                                <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
-                            </Grid.GestureRecognizers>
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" ColumnSpacing="10">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="45"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="150" />
-                                <ColumnDefinition Width="120" />
-                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
                             </Grid.ColumnDefinitions>
-                            <!--Content of Grid below-->
-                            <Label x:Name="NameExercise1" Grid.Row="0" Grid.Column="0" Text="{Binding workoutName}" Style="{StaticResource SmallHeadlineText}"/>
+                            <!--Content of Grid below -->
+                            <Label x:Name="Squat" Grid.Row="0" Grid.Column="0" Text="Squat" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="SquatNotes" Grid.Row="1" Grid.Column="0" Text="Notes" WidthRequest="150" Style="{StaticResource NotesText}" IsReadOnly="True" />
 
-                            <Label Grid.Row="0" Grid.Column="1" Text="Duration:" Style="{StaticResource SmallHeadlineText}" />
-                            <Label x:Name="DurationExercise1" Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
-
-                            <Label Grid.Row="0" Grid.Column="2" Text="Date:" Style="{StaticResource SmallHeadlineText}"/>
-                            <Label x:Name="DateExercise1" Grid.Row="2" Grid.Column="2" Text="Date" Style="{StaticResource SmallSublineText}" />
-
-                            <Label x:Name="CategoryExercise1" Grid.Row="1" Grid.Column="0" Text="Category" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="SquatReps" Grid.Row="1" Grid.Column="1" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="SquatSets" Grid.Row="2" Grid.Column="2" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="SquatWeight" Grid.Row="2" Grid.Column="3" Text="0" Style="{StaticResource SmallSublineText}" />
                         </Grid>
-
                     </Frame>
                 </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="45"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label x:Name="LegPress" Grid.Row="0" Grid.Column="0" Text="Leg Press" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="LegPressNotes" Grid.Row="1" Grid.Column="0" Text="Notes" WidthRequest="150" Style="{StaticResource NotesText}" IsReadOnly="True"/>
+
+                            <Label x:Name="LegPressReps" Grid.Row="1" Grid.Column="1" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="LegPressSets"  Grid.Row="2" Grid.Column="2" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="LegPressWeight"  Grid.Row="2" Grid.Column="3" Text="0" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="45"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label x:Name="Dips"  Grid.Row="0" Grid.Column="0" Text="Dips" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="DipsNotes" Grid.Row="1" Grid.Column="0" Text="Notes" WidthRequest="150" Style="{StaticResource NotesText}" IsReadOnly="True"/>
+
+                            <Label x:Name="DipsReps" Grid.Row="1" Grid.Column="1" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="DipsSets" Grid.Row="2" Grid.Column="2" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="DipsWeight" Grid.Row="2" Grid.Column="3" Text="0" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="45"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label x:Name="SitUps" Grid.Row="0" Grid.Column="0" Text="Sit-Ups" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="SitUpNotes" Grid.Row="1" Grid.Column="0" Text="Notes" WidthRequest="150" Style="{StaticResource NotesText}" IsReadOnly="True" />
+
+                            <Label x:Name="SitUpReps" Grid.Row="1" Grid.Column="1" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="SitUpSets" Grid.Row="2" Grid.Column="2" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="SitUpWeight" Grid.Row="2" Grid.Column="3" Text="0" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
+                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="5">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="45"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below -->
+                            <Label x:Name="Deadlift"  Grid.Row="0" Grid.Column="0" Text="Deadlift" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Reps:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="Sets:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="Kg:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Editor x:Name="DeadliftNotes" Grid.Row="1" Grid.Column="0" Text="Notes" WidthRequest="150" Style="{StaticResource NotesText}" IsReadOnly="True"/>
+
+                            <Label x:Name="DeadliftReps" Grid.Row="1" Grid.Column="1" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="DeadliftSets" Grid.Row="2" Grid.Column="2" Text="0" Style="{StaticResource SmallSublineText}" />
+                            <Label x:Name="DeadliftWeight" Grid.Row="2" Grid.Column="3" Text="0" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+
             </StackLayout>
         </ScrollView>
 

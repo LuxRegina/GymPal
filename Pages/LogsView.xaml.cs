@@ -11,7 +11,7 @@ namespace GymPal.Pages;
 
 public partial class LogsView : ContentPage
 {
-    public List<ProgramModel> workoutData = null;
+    
     public string? workoutName = "";
     public string? workoutDuration = null;
     public string? workoutDate = null;
@@ -78,12 +78,17 @@ public partial class LogsView : ContentPage
         {
             DisplayAlert("Something went wrong", "Too many programs!", "Close");
         }
-                
+        //for (int j = 0; j < workoutData[0].exercise.Count; j++)
+        //{
+
+        //    Debug.WriteLine($"Test: {workoutData[0].exercise[j]}");
+        //}
     }
 
     private async void Program1_Tapped(object sender, TappedEventArgs e)
     {
         string workoutName = NameExercise.Text;
         await Navigation.PushAsync(new LogsView2(workoutName));
+
     }
 }
