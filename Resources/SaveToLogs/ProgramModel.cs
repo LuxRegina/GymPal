@@ -11,8 +11,8 @@ namespace GymPal.Resources.SaveToLogs
     {
         public string? Name { get; set; }        // CustomGym
         public string? Duration { get; set; }    // 45 min
-        public DateTime Date { get; set; }      // 12/4/24
-        public string Category { get; set; }    // FreeWeight, Cardio, BodyWeight
+        public string? Date { get; set; }      // 12/4/24
+        public string? Category { get; set; }    // Free Weight, Cardio, Body Weight
                
         public List<FreeWeightModel>? exercise { get; set; }
 

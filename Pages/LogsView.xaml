@@ -58,18 +58,20 @@
                                 <RowDefinition Height="35"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="150" />
                                 <ColumnDefinition Width="120" />
                                 <ColumnDefinition Width="120" />
                             </Grid.ColumnDefinitions>
                             <!--Content of Grid below--> 
                             <Label x:Name="NameExercise" Grid.Row="0" Grid.Column="0" Text="{Binding workoutName}" Style="{StaticResource SmallHeadlineText}"/>
+                            
                             <Label Grid.Row="0" Grid.Column="1" Text="Duration:" Style="{StaticResource SmallHeadlineText}" />
                             <Label x:Name="DurationExercise" Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            
                             <Label Grid.Row="0" Grid.Column="2" Text="Date:" Style="{StaticResource SmallHeadlineText}"/>
-                            <Label x:Name="DateExercise" Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />
-                            <!--<Label Grid.Row="0" Grid.Column="2" Text="Category:" Style="{StaticResource SmallHeadlineText}"/>
-                            <Label x:Name="DateExercise" Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />-->
+                            <Label x:Name="DateExercise" Grid.Row="2" Grid.Column="2" Text="Date" Style="{StaticResource SmallSublineText}" />
+                            
+                            <Label x:Name="CategoryExercise" Grid.Row="1" Grid.Column="0" Text="Category" Style="{StaticResource SmallSublineText}" />
                         </Grid>
                         
                     </Frame>
@@ -87,18 +89,20 @@
                                 <RowDefinition Height="35"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="150" />
                                 <ColumnDefinition Width="120" />
                                 <ColumnDefinition Width="120" />
                             </Grid.ColumnDefinitions>
                             <!--Content of Grid below-->
                             <Label x:Name="NameExercise1" Grid.Row="0" Grid.Column="0" Text="{Binding workoutName}" Style="{StaticResource SmallHeadlineText}"/>
+                            
                             <Label Grid.Row="0" Grid.Column="1" Text="Duration:" Style="{StaticResource SmallHeadlineText}" />
                             <Label x:Name="DurationExercise1" Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            
                             <Label Grid.Row="0" Grid.Column="2" Text="Date:" Style="{StaticResource SmallHeadlineText}"/>
-                            <Label x:Name="DateExercise1" Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />
-                            <!--<Label Grid.Row="0" Grid.Column="2" Text="Category:" Style="{StaticResource SmallHeadlineText}"/>
-                            <Label x:Name="DateExercise" Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />-->
+                            <Label x:Name="DateExercise1" Grid.Row="2" Grid.Column="2" Text="Date" Style="{StaticResource SmallSublineText}" />
+                            
+                            <Label x:Name="CategoryExercise1" Grid.Row="1" Grid.Column="0" Text="Category" Style="{StaticResource SmallSublineText}" />
                         </Grid>
 
                     </Frame>

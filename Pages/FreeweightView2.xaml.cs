@@ -10,15 +10,17 @@ public partial class FreeweightView2 : ContentPage
 {
     private DateTime startTimer;
 	private DateTime stopTimer;
+    private DateTime date;
     private string workoutName;
     public string workoutDuration;
-    private DateTime date;
+    public string correctDateFormat;
     private string category = "Free Weight";
       
     public FreeweightView2(string workoutname)
 	{
 		InitializeComponent();
         workoutName = workoutname;
+       
 	}
 
 	public async void HomeBtn_Clicked(object sender, EventArgs e)
@@ -54,6 +56,7 @@ public partial class FreeweightView2 : ContentPage
 			stopTimer = DateTime.Now;			
 
 			workoutDuration = CountTime(startTimer, stopTimer);
+            correctDateFormat = DateFormatFix(date);
 			CompileExerciseData();
 			
 			OverlayGrid.IsVisible = true;
@@ -62,20 +65,25 @@ public partial class FreeweightView2 : ContentPage
 		}
     }
 
-	// Counts how long the workout lasted.
+    // Changes format of date to: day/month - year.
+    private string DateFormatFix(DateTime date)
+    {
+        int year = date.Year;
+        int month = date.Month;
+        int day = date.Day;
+
+        string dateFixed = $"{day}/{month} - {year}";
+        return dateFixed;
+    }
+
+    // Counts how long the workout lasted and gives back in format hour:minutes.
     private static string CountTime(DateTime startTimer, DateTime stopTimer)
     {
         TimeSpan duration = stopTimer - startTimer;
         int hour = duration.Hours;
         int minutes = duration.Minutes;
-        int seconds = duration.Seconds;
-        Debug.WriteLine(hour);
-        Debug.WriteLine(minutes);
-        Debug.WriteLine(seconds);
-        Debug.WriteLine($"Duration of workout: {duration}");
-
-        string time = $"{hour}:{minutes}";
-		
+    
+        string time = $"{hour} h {minutes} min";		
 		return time;		
     }
 
@@ -114,24 +122,16 @@ public partial class FreeweightView2 : ContentPage
         {
             notes = "Notes";
         }
-
+        Debug.WriteLine(category);
         var newProgram = new ProgramModel()
         {
             Name = workoutName,
             Duration = workoutDuration,
-            Date = date,            
+            Date = correctDateFormat,            
             Category = category,
             exercise = new List<FreeWeightModel>()
         };
-
-        //var newList = new AllLists()
-        //{
-        //    exercise = new List<FreeWeightModel>(),
-        //    //exercise2 = new List<BodyWeightModel>(),
-        //    //exercise3 = new List<CardioModel>()
-        //};
-        //newProgram.exercises.Add(newList);
-
+        
         var newExercise = new FreeWeightModel
         {
             ExerciseName = exerciseName,
@@ -141,9 +141,6 @@ public partial class FreeweightView2 : ContentPage
             Weight = weight
         };
         newProgram.exercise.Add(newExercise);
-
-
-        //exercises.ToString();
 
         // Next exercise (Squat) being added to list below. Do for all exercises!
         if (int.TryParse(SquatReps.Text, out resultReps))

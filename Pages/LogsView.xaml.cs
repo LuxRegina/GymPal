@@ -15,46 +15,32 @@ public partial class LogsView : ContentPage
     public List<ProgramModel> workoutData = null;
     public string? workoutName = "";
     public string? workoutDuration = null;
-    public DateTime? workoutDate = null;
+    public string? workoutDate = null;
 
     public string? workoutName1 = "";
     public string? workoutDuration1 = null;
-    public DateTime? workoutDate1 = null;
+    public string? workoutDate1 = null;
 
     public string? workoutCategory = "Free Weight";
     
 
     public LogsView()
 	{        
-        InitializeComponent();
-       //$"{DateTime.Now:HH:mm}";
+        InitializeComponent();      
         LoadDataFromJson("SaveToLogs.json");
 
         NameExercise.Text = workoutName;
-        DurationExercise.Text = workoutDuration;
-      
-        DateExercise.Text = workoutDate.ToString();
+        DurationExercise.Text = workoutDuration;      
+        DateExercise.Text = workoutDate;
+        CategoryExercise.Text = workoutCategory;
 
         NameExercise1.Text = workoutName1;
         DurationExercise1.Text = workoutDuration1;
-        DateExercise1.Text = workoutDate1.ToString();
-
-        
-
+        DateExercise1.Text = workoutDate1;
+        CategoryExercise1.Text = workoutCategory;
     }
 
-    public void LoadLogs(List<ProgramModel> logsData)
-    {
-        if (logsData != null)
-        {
-            //CollectionView collectionView = new CollectionView();
-            //collectionView.SetBinding(ItemsView.ItemsSourceProperty, "ExerciseList");
-
-            //NameExercise.Text = logsData.Name;
-            
-        }
-    }
-
+ 
     private async void HomeBtn_Clicked(object sender, EventArgs e)
 	{
 		await Navigation.PushAsync(new MainPage());
@@ -66,7 +52,7 @@ public partial class LogsView : ContentPage
 
         if (workoutData.Count == 0)
         {
-            //DisplayAlert("Oops!", "Nothing Saved!", "Close");
+            
         }
         else if(workoutData.Count == 1)
         {
@@ -88,15 +74,10 @@ public partial class LogsView : ContentPage
             workoutDuration1 = workoutData[1].Duration;
             workoutDate1 = workoutData[1].Date;
         }
-
-
-        //Debug.WriteLine(workoutData[0].Name);
-
-
-        //Debug.WriteLine(workoutData.Count);
-
-      
-    
+        else if (workoutData.Count > 2)
+        {
+            DisplayAlert("Something went wrong", "Too many programs!", "Close");
+        }
+                
     }
-   
 }
