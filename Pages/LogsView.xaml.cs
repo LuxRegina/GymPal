@@ -22,6 +22,7 @@ public partial class LogsView : ContentPage
     public DateTime? workoutDate1 = null;
 
     public string? workoutCategory = "Free Weight";
+    
 
     public LogsView()
 	{        
@@ -38,6 +39,7 @@ public partial class LogsView : ContentPage
         DurationExercise1.Text = workoutDuration1;
         DateExercise1.Text = workoutDate1.ToString();
 
+        
 
     }
 
@@ -62,16 +64,38 @@ public partial class LogsView : ContentPage
     {
         var workoutData = MainPage.LoadProgramFromJsonFile(fileName2);
 
+        if (workoutData.Count == 0)
+        {
+            //DisplayAlert("Oops!", "Nothing Saved!", "Close");
+        }
+        else if(workoutData.Count == 1)
+        {
+            Frame0.IsVisible = true;
+            workoutName = workoutData[0].Name;
+            workoutDuration = workoutData[0].Duration;
+            workoutDate = workoutData[0].Date;
+        }
+        else if(workoutData.Count == 2)
+        {
+            Frame0.IsVisible = true;
+            Frame1.IsVisible = true;
+
+            workoutName = workoutData[0].Name;
+            workoutDuration = workoutData[0].Duration;
+            workoutDate = workoutData[0].Date;
+
+            workoutName1 = workoutData[1].Name;
+            workoutDuration1 = workoutData[1].Duration;
+            workoutDate1 = workoutData[1].Date;
+        }
+
+
         //Debug.WriteLine(workoutData[0].Name);
-        workoutName = workoutData[0].Name;
-        workoutDuration = workoutData[0].Duration;
-        workoutDate = workoutData[0].Date;
+
 
         //Debug.WriteLine(workoutData.Count);
 
-        workoutName1 = workoutData[1].Name;
-        workoutDuration1 = workoutData[1].Duration;
-        workoutDate1 = workoutData[1].Date;
+      
     
     }
    

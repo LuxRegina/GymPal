@@ -46,9 +46,9 @@
         <!-- Skrollbar + Exempel -->
         <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
             <StackLayout Spacing="20">           
-                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                <Frame x:Name="Frame0" IsVisible="False" Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame x:Name="Test" BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" >
                                 <!--Makes the grid clickable--> 
                             <Grid.GestureRecognizers>
                                 <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
@@ -75,9 +75,9 @@
                     </Frame>
                 </Frame>
 
-                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                <Frame x:Name="Frame1" IsVisible="False"  Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
                     <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
-                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}">
                             <!--Makes the grid clickable-->
                             <Grid.GestureRecognizers>
                                 <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
