@@ -32,6 +32,17 @@ namespace GymPal.Resources.ProfileSaveData
                 string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
                 streamWriter.Write(json);
             }
-        }            
+        }
+         // Save to Logs data.
+        public static void SaveWorkoutToJsonFile<ProgramModel>(ProgramModel data, string fileName2)
+        {
+            string filePath = GetFilePath(fileName2);
+            Debug.WriteLine($"sökväg: {filePath}");
+            using (var streamWriter = new StreamWriter(filePath, false))
+            {
+                string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+                streamWriter.Write(json);
+            }
+        }
     }
 }

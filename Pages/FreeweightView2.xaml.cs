@@ -1,4 +1,8 @@
+using GymPal.Resources.SaveToLogs;
+using GymPal.Resources.ProfileSaveData;
+using Microsoft.Maui.Storage;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace GymPal.Pages;
 
@@ -6,11 +10,16 @@ public partial class FreeweightView2 : ContentPage
 {
     private DateTime startTimer;
 	private DateTime stopTimer;
+    private string workoutName;
+    public TimeSpan workoutDuration;
+    private DateTime date;
 
+    //public const string fileName2 = "SaveToLogs.json";
 
-    public FreeweightView2()
+    public FreeweightView2(string workoutname)
 	{
 		InitializeComponent();
+        workoutName = workoutname;
 	}
 
 	public async void HomeBtn_Clicked(object sender, EventArgs e)
@@ -33,6 +42,7 @@ public partial class FreeweightView2 : ContentPage
 
 			TimeDisplay.Text = $"{DateTime.Now:HH:mm}";
 			startTimer = DateTime.Now;
+            date = DateTime.Now;
 						
 		}
 		else if (StartBtn.Text == "Finish")
@@ -44,9 +54,8 @@ public partial class FreeweightView2 : ContentPage
 			
 			stopTimer = DateTime.Now;			
 
-			//Send this along with the other data to Logs!
-			TimeSpan workoutDuration = CountTime(startTimer, stopTimer);
-
+			workoutDuration = CountTime(startTimer, stopTimer);
+			CompileExerciseData();
 			
 			OverlayGrid.IsVisible = true;
 			await Task.Delay(3000);
@@ -63,12 +72,14 @@ public partial class FreeweightView2 : ContentPage
 		return duration;		
     }
 
+    //Saves all input from user to a list called ExerciseList.
     private void CompileExerciseData()
     {
-        string exerciseName = ExerciseName.Text;
-        string notes = Notes1.Text;
+            
+        string exerciseName = BenchPress.Text;
+        string notes = BenchPressNotes.Text;
 
-        string textReps = RepsNotes1.Text;
+        string textReps = BPReps.Text;
         int reps;
         if (int.TryParse(textReps, out int resultReps))
         {
@@ -76,7 +87,7 @@ public partial class FreeweightView2 : ContentPage
         }
         else { reps = 0; }
 
-        string textSets = SetsNotes1.Text;
+        string textSets = BPSets.Text;
         int sets;
         if (int.TryParse(textSets, out int resultSets))
         {
@@ -84,7 +95,7 @@ public partial class FreeweightView2 : ContentPage
         }
         else { sets = 0; }
 
-        string textWeight = WeightNotes1.Text;
+        string textWeight = BPWeight.Text;
         int weight;
         if (int.TryParse(textWeight, out int resultWeight))
         {
@@ -97,25 +108,56 @@ public partial class FreeweightView2 : ContentPage
         {
             notes = "Notes";
         }
-     
-        /*var newExercise = new FreeWeightInputData
-		new FreeWeightInputData(string exerciseName, string notes, int reps, int sets, int weight)
-		{
-			ExerciseName = exerciseName,
-			Notes = notes,
-			Reps = reps,
-			Sets = sets,
-			Weight = weight
-		};
-		*/
-        InputData.Add(new FreeWeightInputData(exerciseName, notes, reps, sets, weight));
 
-
-        foreach (var data in InputData)
+        var newProgram = new ProgramModel()
         {
-            Debug.WriteLine(data);
+            Name = workoutName,
+            Duration = workoutDuration,
+            Date = date,
+            exercise = new List<ExerciseModel>()
+        };
+
+        var newExercise = new ExerciseModel
+        {
+            ExerciseName = exerciseName,
+            Notes = notes,
+            Reps = reps,
+            Sets = sets,
+            Weight = weight
+        };
+        newProgram.exercise.Add(newExercise);
+        
+        // Next exercise (Squat) being added to list below. Do for all exercises!
+        if (int.TryParse(SquatReps.Text, out resultReps))
+        {
+            reps = resultReps;
         }
+        else { reps = 0; }
 
+        if (int.TryParse(SquatSets.Text, out resultSets))
+        {
+            sets = resultSets;
+        }
+        else { sets = 0; }
 
-    }
+        if (int.TryParse(SquatWeight.Text, out resultWeight))
+        {
+            weight = resultWeight;
+        }
+        else { weight = 0; }
+
+        newExercise = new ExerciseModel
+        {
+            ExerciseName = Squat.Text,
+            Notes = SquatNotes.Text,
+            Reps = reps,
+            Sets = sets,
+            Weight = weight
+        };
+        newProgram.exercise.Add(newExercise);
+
+        MainPage.ExerciseList.Add(newProgram);       
+        FilePathHelper.SaveWorkoutToJsonFile(MainPage.ExerciseList, App.fileName2);
+        
+    }  
 }
