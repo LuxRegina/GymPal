@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymPal.Resources.SaveToLogs
 {
-    public class ExerciseModel
+    public class FreeWeightModel
     {
         public string? ExerciseName { get; set; }       // Benchpress
         public string? Notes { get; set; }   // I was in Spain        

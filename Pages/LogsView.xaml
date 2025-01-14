@@ -30,19 +30,12 @@
         <!-- Skrollbar + Exempel -->
         <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
             <StackLayout Spacing="20">
+                <CollectionView>
+                    
+                    
+                </CollectionView>
 
-                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="2023-11-30"
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="2024-02-05"
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="2024-05-31" 
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
+              
             </StackLayout>
         </ScrollView>
 
@@ -52,5 +45,6 @@
                     HeightRequest="50" WidthRequest="50" CornerRadius="12" 
                     HorizontalOptions="Center" VerticalOptions="End" Grid.Column="1" />
         </Grid>
+        
     </Grid>
 </ContentPage>

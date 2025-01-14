@@ -13,9 +13,8 @@ public partial class FreeweightView2 : ContentPage
     private string workoutName;
     public TimeSpan workoutDuration;
     private DateTime date;
-
-    //public const string fileName2 = "SaveToLogs.json";
-
+    private string category = "Free Weight";
+      
     public FreeweightView2(string workoutname)
 	{
 		InitializeComponent();
@@ -58,7 +57,7 @@ public partial class FreeweightView2 : ContentPage
 			CompileExerciseData();
 			
 			OverlayGrid.IsVisible = true;
-			await Task.Delay(3000);
+			await Task.Delay(2500);
 			await Navigation.PushAsync(new MainPage());
 		}
     }
@@ -74,8 +73,7 @@ public partial class FreeweightView2 : ContentPage
 
     //Saves all input from user to a list called ExerciseList.
     private void CompileExerciseData()
-    {
-            
+    {            
         string exerciseName = BenchPress.Text;
         string notes = BenchPressNotes.Text;
 
@@ -113,11 +111,20 @@ public partial class FreeweightView2 : ContentPage
         {
             Name = workoutName,
             Duration = workoutDuration,
-            Date = date,
-            exercise = new List<ExerciseModel>()
+            Date = date,            
+            Category = category,
+            exercise = new List<FreeWeightModel>()
         };
 
-        var newExercise = new ExerciseModel
+        //var newList = new AllLists()
+        //{
+        //    exercise = new List<FreeWeightModel>(),
+        //    //exercise2 = new List<BodyWeightModel>(),
+        //    //exercise3 = new List<CardioModel>()
+        //};
+        //newProgram.exercises.Add(newList);
+
+        var newExercise = new FreeWeightModel
         {
             ExerciseName = exerciseName,
             Notes = notes,
@@ -126,7 +133,10 @@ public partial class FreeweightView2 : ContentPage
             Weight = weight
         };
         newProgram.exercise.Add(newExercise);
-        
+
+
+        //exercises.ToString();
+
         // Next exercise (Squat) being added to list below. Do for all exercises!
         if (int.TryParse(SquatReps.Text, out resultReps))
         {
@@ -146,7 +156,7 @@ public partial class FreeweightView2 : ContentPage
         }
         else { weight = 0; }
 
-        newExercise = new ExerciseModel
+        newExercise = new FreeWeightModel
         {
             ExerciseName = Squat.Text,
             Notes = SquatNotes.Text,
@@ -156,8 +166,123 @@ public partial class FreeweightView2 : ContentPage
         };
         newProgram.exercise.Add(newExercise);
 
-        MainPage.ExerciseList.Add(newProgram);       
-        FilePathHelper.SaveWorkoutToJsonFile(MainPage.ExerciseList, App.fileName2);
-        
+        // Next exercise (Leg Press) being added to list below. Do for all exercises!
+        if (int.TryParse(LegPressReps.Text, out resultReps))
+        {
+            reps = resultReps;
+        }
+        else { reps = 0; }
+
+        if (int.TryParse(LegPressSets.Text, out resultSets))
+        {
+            sets = resultSets;
+        }
+        else { sets = 0; }
+
+        if (int.TryParse(LegPressWeight.Text, out resultWeight))
+        {
+            weight = resultWeight;
+        }
+        else { weight = 0; }
+
+        newExercise = new FreeWeightModel
+        {
+            ExerciseName = LegPress.Text,
+            Notes = LegPressNotes.Text,
+            Reps = reps,
+            Sets = sets,
+            Weight = weight
+        };
+        newProgram.exercise.Add(newExercise);
+
+        // Next exercise (Dips) being added to list below. Do for all exercises!
+        if (int.TryParse(DipsReps.Text, out resultReps))
+        {
+            reps = resultReps;
+        }
+        else { reps = 0; }
+
+        if (int.TryParse(DipsSets.Text, out resultSets))
+        {
+            sets = resultSets;
+        }
+        else { sets = 0; }
+
+        if (int.TryParse(DipsWeight.Text, out resultWeight))
+        {
+            weight = resultWeight;
+        }
+        else { weight = 0; }
+
+        newExercise = new FreeWeightModel
+        {
+            ExerciseName = Dips.Text,
+            Notes = DipsNotes.Text,
+            Reps = reps,
+            Sets = sets,
+            Weight = weight
+        };
+        newProgram.exercise.Add(newExercise);
+
+        // Next exercise (SitUp) being added to list below. Do for all exercises!
+        if (int.TryParse(SitUpReps.Text, out resultReps))
+        {
+            reps = resultReps;
+        }
+        else { reps = 0; }
+
+        if (int.TryParse(SitUpSets.Text, out resultSets))
+        {
+            sets = resultSets;
+        }
+        else { sets = 0; }
+
+        if (int.TryParse(SitUpWeight.Text, out resultWeight))
+        {
+            weight = resultWeight;
+        }
+        else { weight = 0; }
+
+        newExercise = new FreeWeightModel
+        {
+            ExerciseName = SitUps.Text,
+            Notes = SitUpNotes.Text,
+            Reps = reps,
+            Sets = sets,
+            Weight = weight
+        };
+        newProgram.exercise.Add(newExercise);
+
+        // Next exercise (Deadlift) being added to list below. Do for all exercises!
+        if (int.TryParse(DeadliftReps.Text, out resultReps))
+        {
+            reps = resultReps;
+        }
+        else { reps = 0; }
+
+        if (int.TryParse(DeadliftSets.Text, out resultSets))
+        {
+            sets = resultSets;
+        }
+        else { sets = 0; }
+
+        if (int.TryParse(DeadliftWeight.Text, out resultWeight))
+        {
+            weight = resultWeight;
+        }
+        else { weight = 0; }
+
+        newExercise = new FreeWeightModel
+        {
+            ExerciseName = Deadlift.Text,
+            Notes = DeadliftNotes.Text,
+            Reps = reps,
+            Sets = sets,
+            Weight = weight
+        };
+        newProgram.exercise.Add(newExercise);
+
+        MainPage.ExerciseList.Add(newProgram);
+        FilePathHelper.SaveWorkoutToJsonFile(MainPage.ExerciseList, App.fileName2);        
     }  
 }

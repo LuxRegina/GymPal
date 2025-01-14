@@ -74,7 +74,7 @@ public partial class RunningView2 : ContentPage
 			// TBD Save to Logs!!
 
 			OverlayGrid.IsVisible = true;
-			await Task.Delay(3000);
+			await Task.Delay(2500);
 			await Navigation.PushAsync(new MainPage());
 		}
 	}

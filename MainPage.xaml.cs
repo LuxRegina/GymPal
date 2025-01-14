@@ -14,6 +14,8 @@ namespace GymPal
     public partial class MainPage : ContentPage
     {        
         public static List<ProgramModel> ExerciseList = new List<ProgramModel>();
+        //public static List<AllLists> Lists = new List<AllLists>();
+
 
         public MainPage()
         {
@@ -41,6 +43,7 @@ namespace GymPal
 
             if (logsData != null)
             {
+                Debug.WriteLine(logsData.Count);
                 //logsView.LoadProfile(logsData);
             }
             await Navigation.PushAsync(logsView);
