@@ -55,7 +55,7 @@ public partial class BodyWeight2 : ContentPage
 			stopTimer = DateTime.Now;
 
 			workoutDuration = CountTime(startTimer, stopTimer);
-            CompileExerciseData();
+            //CompileExerciseData();
             		
 			OverlayGrid.IsVisible = true;
 			await Task.Delay(2500);

@@ -3,7 +3,7 @@ using GymPal.Resources.ProfileSaveData;
 using GymPal.Resources.SaveToLogs;
 using Microsoft.Maui.Controls.Internals;
 using Newtonsoft.Json;
-
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 
 //using static CoreFoundation.DispatchSource;
@@ -12,8 +12,9 @@ using System.Text.Json;
 namespace GymPal
 {
     public partial class MainPage : ContentPage
-    {        
-        public static List<ProgramModel> ExerciseList = new List<ProgramModel>();
+    {
+        public static ObservableCollection<ProgramModel> ExerciseList = new ObservableCollection<ProgramModel>();
+        //public static List<ProgramModel> ExerciseList = new List<ProgramModel>();
         //public static List<AllLists> Lists = new List<AllLists>();
 
 
@@ -33,7 +34,7 @@ namespace GymPal
             var logsView = new LogsView();
             if (App.fileName2 == null)
             {
-                //skapa filen profiledata.json
+                //skapar filen SaveToLogs.json
                 using (StreamWriter writer = new StreamWriter(App.fileName2))
                 {
                     writer.Write("{}");
@@ -43,8 +44,8 @@ namespace GymPal
 
             if (logsData != null)
             {
-                Debug.WriteLine(logsData.Count);
-                //logsView.LoadProfile(logsData);
+                //Debug.WriteLine(logsData.Count);
+                logsView.LoadLogs(logsData);
             }
             await Navigation.PushAsync(logsView);
                         
@@ -87,13 +88,13 @@ namespace GymPal
              await Navigation.PushAsync(new Custom());
         }
 
-        public static List<ProgramModel> LoadProgramFromJsonFile(string fileName2)
+        public static ObservableCollection<ProgramModel> LoadProgramFromJsonFile(string fileName2)
         {
 
             string filePath = FilePathHelper.GetFilePath(fileName2);
 
             string jsonFile = ReadFile(filePath);
-            List<ProgramModel>? workouts = JsonConvert.DeserializeObject<List<ProgramModel>>(jsonFile);
+            ObservableCollection<ProgramModel>? workouts = JsonConvert.DeserializeObject<ObservableCollection<ProgramModel>>(jsonFile);
             Debug.WriteLine(workouts);
             return workouts;
         }

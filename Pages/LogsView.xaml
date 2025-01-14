@@ -3,15 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GymPal.Pages.LogsView">
 
-    <Grid RowDefinitions="Auto, *, Auto">
+    <VerticalStackLayout Padding="10,0" Spacing="20">
         <!-- Header -->
-        <Grid Padding="10">
-
-            <!-- Titel -->
-            <Label Text="Logs"
-                    Style="{StaticResource SubHeadline}"
-                    SemanticProperties.Description="Logs" />
-            
+        <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
+                 
             <!-- Tillbaka-pil -->
             <ImageButton 
                   Source="back.png"
@@ -24,27 +19,61 @@
                   SemanticProperties.Description="Manage home button." 
                   Clicked="HomeBtn_Clicked" />
 
+            <!-- Titel -->
+            <Label Text="Logs"
+                 Style="{StaticResource SubHeadline}"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"   
+                 SemanticProperties.Description="Logs" />
+
+            <Line X1="0" Y1="0" X2="500" Y2="0" 
+                    Stroke="{StaticResource SecondaryGreen}"
+                    VerticalOptions="End" />
+
 
         </Grid>
 
         <!-- Skrollbar + Exempel -->
-        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
+        <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
             <StackLayout Spacing="20">
-                <CollectionView>
-                    
-                    
-                </CollectionView>
+             
+                <CollectionView ItemsSource="{Binding ExerciseList}" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
 
-              
+                            <Grid HeightRequest="100" WidthRequest="100">
+                                <Frame Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                                        <Grid BackgroundColor="{StaticResource ThirdGreen}" IsEnabled="True">
+                                            <!-- Makes the grid clickable -->
+                                            <Grid.GestureRecognizers>
+                                                <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
+                                            </Grid.GestureRecognizers>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="35"/>
+                                                <RowDefinition Height="35"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="180" />
+                                                <ColumnDefinition Width="120" />
+                                                <ColumnDefinition Width="120" />
+                                            </Grid.ColumnDefinitions>
+                                            <!--Content of Grid below -->
+                                            <Label x:Name="workoutName" Grid.Row="0" Grid.Column="0" Text="Full Body" Style="{StaticResource SmallHeadlineText}"/>
+                                            <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
+                                            <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                                            <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>
+                                            <Label Grid.Row="2" Grid.Column="2" Text="High" Style="{StaticResource SmallSublineText}" />
+                                        </Grid>
+                                    </Frame>
+                                </Frame>
+                            </Grid>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
         </ScrollView>
 
-        <!-- Bottenknapp -->
-        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
-            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
-                    HeightRequest="50" WidthRequest="50" CornerRadius="12" 
-                    HorizontalOptions="Center" VerticalOptions="End" Grid.Column="1" />
-        </Grid>
-        
-    </Grid>
+    </VerticalStackLayout>
 </ContentPage>

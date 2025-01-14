@@ -17,6 +17,24 @@ namespace GymPal.Resources.SaveToLogs
         //public List<AllLists>? exercises { get; set; }    // Exercises from all 
         public List<FreeWeightModel>? exercise { get; set; }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //// Add a ToString()
         //public override string ToString()  // Makes the Debug.WriteLine Print out correctly for testing.
         //{
