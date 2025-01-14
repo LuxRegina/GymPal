@@ -80,4 +80,10 @@ public partial class LogsView : ContentPage
         }
                 
     }
+
+    private async void Program1_Tapped(object sender, TappedEventArgs e)
+    {
+        string workoutName = NameExercise.Text;
+        await Navigation.PushAsync(new LogsView2(workoutName));
+    }
 }
