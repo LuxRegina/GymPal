@@ -64,7 +64,7 @@
                                 <ColumnDefinition Width="120" />
                             </Grid.ColumnDefinitions>
                             <!--Content of Grid below -->
-                            <Label Grid.Row="0" Grid.Column="0" Text="Full Body" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label x:Name="WorkoutName" Grid.Row="0" Grid.Column="0" Text="Full Body" Style="{StaticResource SmallHeadlineText}"/>
                             <Label Grid.Row="0" Grid.Column="1" Text="Time:" Style="{StaticResource SmallHeadlineText}" />
                             <Label Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
                             <Label Grid.Row="0" Grid.Column="2" Text="Intensity:" Style="{StaticResource SmallHeadlineText}"/>

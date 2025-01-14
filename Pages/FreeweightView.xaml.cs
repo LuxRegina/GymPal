@@ -12,10 +12,11 @@ public partial class FreeweightView : ContentPage
 		await Navigation.PushAsync(new MainPage());
 	}
 
+	// Navigates to FreeweightView2 and brings the name of the exercise along to next view.
 	private async void FullBodyProgram_Tapped(object sender, TappedEventArgs e)
 	{
-		await Navigation.PushAsync(new FreeweightView2());
-		// TBD Show Exercises in Full body program and a button for start. (Starts timer)
+		string workoutName = WorkoutName.Text;
+		await Navigation.PushAsync(new FreeweightView2(workoutName));	
 	}
 
 	private void ArmDay_Tapped(object sender, TappedEventArgs e)

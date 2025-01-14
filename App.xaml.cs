@@ -1,15 +1,20 @@
-﻿
+﻿using GymPal.Resources.SaveToLogs;
+using GymPal.Resources.ProfileSaveData;
+using Newtonsoft.Json;
+using System.Diagnostics;
+
 namespace GymPal
 {
     public partial class App : Application
-    {   
+    {
+        public const string fileName2 = "SaveToLogs.json";
+        public const string fileName = "ProfileData.json";
+
 
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new AppShell();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage());            
         }
 
 
@@ -27,5 +32,6 @@ namespace GymPal
             return window;
 
         }
+       
     }
 }

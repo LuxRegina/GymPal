@@ -3,15 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GymPal.Pages.LogsView">
 
-    <Grid RowDefinitions="Auto, *, Auto">
+    <VerticalStackLayout Padding="10,0" Spacing="20">
         <!-- Header -->
-        <Grid Padding="10">
-
-            <!-- Titel -->
-            <Label Text="Logs"
-                    Style="{StaticResource SubHeadline}"
-                    SemanticProperties.Description="Logs" />
-            
+        <Grid HeightRequest="120" WidthRequest="450" Padding="10" HorizontalOptions="Fill">
+                 
             <!-- Tillbaka-pil -->
             <ImageButton 
                   Source="back.png"
@@ -24,33 +19,87 @@
                   SemanticProperties.Description="Manage home button." 
                   Clicked="HomeBtn_Clicked" />
 
+            <!-- Titel -->
+            <Label Text="Logs"
+                 Style="{StaticResource SubHeadline}"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"   
+                 SemanticProperties.Description="Logs" />
+
+            <Line X1="0" Y1="0" X2="500" Y2="0" 
+                    Stroke="{StaticResource SecondaryGreen}"
+                    VerticalOptions="End" />
+
 
         </Grid>
-
-        <!-- Skrollbar + Exempel -->
-        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always" Padding="8" >
-            <StackLayout Spacing="20">
-
-                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="2023-11-30"
-                           TextColor="#000000" FontSize="15" />
+        
+        
+        <!-- Skrollbar -->
+        <ScrollView VerticalScrollBarVisibility="Always" HeightRequest="450">
+            <StackLayout Spacing="20">           
+                <Frame x:Name="Frame0" IsVisible="False" Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame x:Name="Test" BorderColor="Transparent" CornerRadius="10" Padding="10">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}" >
+                                <!--Makes the grid clickable--> 
+                            <Grid.GestureRecognizers>
+                                <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below--> 
+                            <Label x:Name="NameExercise" Grid.Row="0" Grid.Column="0" Text="{Binding workoutName}" Style="{StaticResource SmallHeadlineText}"/>
+                            
+                            <Label Grid.Row="0" Grid.Column="1" Text="Duration:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label x:Name="DurationExercise" Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            
+                            <Label Grid.Row="0" Grid.Column="2" Text="Date:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label x:Name="DateExercise" Grid.Row="2" Grid.Column="2" Text="Date" Style="{StaticResource SmallSublineText}" />
+                            
+                            <Label x:Name="CategoryExercise" Grid.Row="1" Grid.Column="0" Text="Category" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+                        
+                    </Frame>
                 </Frame>
-                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="2024-02-05"
-                           TextColor="#000000" FontSize="15" />
-                </Frame>
-                <Frame CornerRadius="10" Padding="5" BackgroundColor="#A0E5CF" BorderColor="#3CBA92">
-                    <Label Text="2024-05-31" 
-                           TextColor="#000000" FontSize="15" />
+
+                <Frame x:Name="Frame1" IsVisible="False"  Padding="3" CornerRadius="10" BackgroundColor="{StaticResource PrimaryGreen}">
+                    <Frame BorderColor="Transparent" CornerRadius="10" Padding="10">
+                        <Grid BackgroundColor="{StaticResource ThirdGreen}">
+                            <!--Makes the grid clickable-->
+                            <Grid.GestureRecognizers>
+                                <!--<TapGestureRecognizer Tapped="FullBodyProgram_Tapped"/>-->
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <!--Content of Grid below-->
+                            <Label x:Name="NameExercise1" Grid.Row="0" Grid.Column="0" Text="{Binding workoutName}" Style="{StaticResource SmallHeadlineText}"/>
+                            
+                            <Label Grid.Row="0" Grid.Column="1" Text="Duration:" Style="{StaticResource SmallHeadlineText}" />
+                            <Label x:Name="DurationExercise1" Grid.Row="1" Grid.Column="1" Text="1 h" Style="{StaticResource SmallSublineText}" />
+                            
+                            <Label Grid.Row="0" Grid.Column="2" Text="Date:" Style="{StaticResource SmallHeadlineText}"/>
+                            <Label x:Name="DateExercise1" Grid.Row="2" Grid.Column="2" Text="Date" Style="{StaticResource SmallSublineText}" />
+                            
+                            <Label x:Name="CategoryExercise1" Grid.Row="1" Grid.Column="0" Text="Category" Style="{StaticResource SmallSublineText}" />
+                        </Grid>
+
+                    </Frame>
                 </Frame>
             </StackLayout>
         </ScrollView>
 
-        <!-- Bottenknapp -->
-        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="15">
-            <Button Text="+" FontSize="20" BackgroundColor="Green" TextColor="#000000" 
-                    HeightRequest="50" WidthRequest="50" CornerRadius="12" 
-                    HorizontalOptions="Center" VerticalOptions="End" Grid.Column="1" />
-        </Grid>
-    </Grid>
+    </VerticalStackLayout>
 </ContentPage>

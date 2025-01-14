@@ -14,7 +14,8 @@ public partial class BodyWeight : ContentPage
 
     private async void CoreProgram_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new BodyWeight2());
+        string workoutName = WorkoutName.Text;
+        await Navigation.PushAsync(new BodyWeight2(workoutName));
         // TBD Show Exercises in Full body program and a button for start. (Starts timer)
     }
 
