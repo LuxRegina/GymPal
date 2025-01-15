@@ -25,11 +25,11 @@
 
                 <!-- Titel -->
                 <Label 
-                Text="Workouts"
+                Text="Workout"
                 Style="{StaticResource SubHeadline}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"                    
-                SemanticProperties.Description="Core workout title" />
+                SemanticProperties.Description="workout title" />
 
                 <!-- Rund bild -->
                 <Image Source="kondition.png"                   
@@ -51,7 +51,7 @@
                 <StackLayout x:Name="FrameStack" Spacing="20" IsVisible="True">
 
                     <!-- Timer -->
-                    <Grid x:Name="TimerGrid" HeightRequest="60" BackgroundColor="Transparent" IsVisible="True">
+                    <Grid x:Name="TimerGrid" HeightRequest="60" BackgroundColor="Transparent" IsVisible="False">
                         <HorizontalStackLayout>
                             <Label Text="Start Time:" WidthRequest="250" Style="{StaticResource SubHeadline}"/>
                             <Border WidthRequest="150" VerticalOptions="Center">
@@ -61,132 +61,138 @@
                     </Grid>
 
                     <!--Running Form -->
-                    <Frame x:Name="RunForm" HeightRequest="350" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
-                        <StackLayout>
-                            <Label Text="Running" FontSize="Small" HorizontalOptions="Center" />
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Distance:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Time:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Note:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Location:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" Padding="5" Margin="5">
-                                <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"/>
-                            </Grid>
+                    <Frame x:Name="RunForm" HeightRequest="350" WidthRequest="410" BackgroundColor="#D7EDE6" IsVisible="False">
+                        <StackLayout Spacing="10" VerticalOptions="Center">
+                            <Label Text="Running" HorizontalOptions="Center" Style="{StaticResource SmallHeadlineText}"/>
+                            
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Time:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+                            
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Note:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+                            
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Location:"  Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
                         </StackLayout>
                     </Frame>
 
                     <!--Walking Form -->
-                    <Frame x:Name="WalkForm" HeightRequest="350" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
-                        <StackLayout>
-                            <Label Text="Walking" FontSize="Small" HorizontalOptions="Center" />
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Distance:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Time:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Note:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Location:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" Padding="5" Margin="5">
-                                <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"/>
-                            </Grid>
+                    <Frame x:Name="WalkForm" HeightRequest="350" WidthRequest="410" BackgroundColor="#D7EDE6" IsVisible="False">
+                        <StackLayout Spacing="10" VerticalOptions="Center">
+                            <Label Text="Walking" HorizontalOptions="Center" Style="{StaticResource SmallHeadlineText}"/>
+                            
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Time:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Note:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Location:"  Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
                         </StackLayout>
                     </Frame>
 
                     <!--Swimming Form -->
-                    <Frame x:Name="SwimForm" HeightRequest="350" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
-                        <StackLayout>
-                            <Label Text="Swimming" FontSize="Small" HorizontalOptions="Center" />
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Distance:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Time:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Note:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Location:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" Padding="5" Margin="5">
-                                <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"/>
-                            </Grid>
+                    <Frame x:Name="SwimForm" HeightRequest="350" WidthRequest="410" BackgroundColor="#D7EDE6" IsVisible="False">
+                        <StackLayout Spacing="10" VerticalOptions="Center">
+                            <Label Text="Swimming" HorizontalOptions="Center" Style="{StaticResource SmallHeadlineText}"/>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Time:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Note:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Location:"  Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
                         </StackLayout>
                     </Frame>
 
                     <!--Cycling Form -->
-                    <Frame x:Name="CycleForm" HeightRequest="350" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
-                        <StackLayout>
-                            <Label Text="Cycling" FontSize="Small" HorizontalOptions="Center" />
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Distance:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Time:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Note:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Location:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" Padding="5" Margin="5">
-                                <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"/>
-                            </Grid>
+                    <Frame x:Name="CycleForm" HeightRequest="350" WidthRequest="410" BackgroundColor="#D7EDE6" IsVisible="False">
+                        <StackLayout Spacing="10" VerticalOptions="Center">
+                            <Label Text="Cycling" HorizontalOptions="Center" Style="{StaticResource SmallHeadlineText}"/>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Time:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Note:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Location:"  Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
                         </StackLayout>
                     </Frame>
 
                     <!--Other Form -->
-                    <Frame x:Name="OtherForm" HeightRequest="350" WidthRequest="400" Margin="5" BackgroundColor="#D7EDE6" IsVisible="False">
-                        <StackLayout>
-                            <Label Text="Other" FontSize="Small" HorizontalOptions="Center" />
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Distance:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Time:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Note:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" HeightRequest="50" Padding="5" Margin="5" HorizontalOptions="Start">
-                                <Label Text="Location:" FontSize="Small" HorizontalTextAlignment="Start"/>
-                                <Editor WidthRequest="250" HorizontalOptions="End"/>
-                            </Grid>
-                            <Grid WidthRequest="400" Padding="5" Margin="5">
-                                <Button Text="SAVE" FontSize="Small" WidthRequest="100" HeightRequest="50" IsEnabled="False"/>
-                            </Grid>
+                    <Frame x:Name="OtherForm" HeightRequest="350" WidthRequest="410" BackgroundColor="#D7EDE6" IsVisible="False">
+                        <StackLayout Spacing="10" VerticalOptions="Center">
+                            <Label Text="Other" HorizontalOptions="Center" Style="{StaticResource SmallHeadlineText}"/>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Distance:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Time:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="40,0" Spacing="25">
+                                <Label Text="Note:" Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout WidthRequest="400" HeightRequest="50" Padding="5,0" Spacing="25">
+                                <Label Text="Location:"  Style="{StaticResource SmallHeadlineText}"/>
+                                <Editor WidthRequest="250" />
+                            </HorizontalStackLayout>
                         </StackLayout>
                     </Frame>
 
